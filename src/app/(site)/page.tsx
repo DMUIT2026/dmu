@@ -87,7 +87,7 @@ export default async function Home() {
         <div className="relative">
           {s.home_intro?.image && (
             <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] shadow-[var(--shadow-lift)]">
-              <Image src={s.home_intro.image} alt="Dubai Medical University" fill sizes="(min-width:1024px) 50vw, 100vw" quality={90} className="object-cover" />
+              <Image src={s.home_intro.image} alt="Dubai Medical University" fill sizes="(min-width:1024px) 50vw, 100vw" quality={90} className="object-cover object-[75%_center]" />
             </div>
           )}
           <div className="relative -mt-16 ml-6 mr-6 grid grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] bg-white/10 shadow-[var(--shadow-lift)] sm:ml-12 sm:mr-0 sm:grid-cols-4 lg:-ml-16">

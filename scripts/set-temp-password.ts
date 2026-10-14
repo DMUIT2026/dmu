@@ -14,6 +14,7 @@ const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPAB
   const pw = 'Dmu-' + crypto.randomBytes(9).toString('base64url');
   const { error } = await sb.auth.admin.updateUserById(u.id, { password: pw, email_confirm: true });
   if (error) { console.log('failed:', error.message); return; }
-  fs.writeFileSync('admin-temp-password.txt', `DMU website admin – temporary sign-in\n\nAddress:  https://dmu-three.vercel.app/admin/login\nEmail:    ${email}\nPassword: ${pw}\n\nAfter signing in, open "My account" (bottom left) and choose your own password.\nThen delete this file.\n`, { mode: 0o600 });
-  console.log('temporary password set for', email, '— saved to admin-temp-password.txt');
+  const file = `admin-temp-password-${email.split('@')[0].replace(/[^a-z0-9]+/g, '-')}.txt`;
+  fs.writeFileSync(file, `DMU website admin – temporary sign-in\n\nAddress:  https://dmu-three.vercel.app/admin/login\nEmail:    ${email}\nPassword: ${pw}\n\nAfter signing in, open "My account" (bottom left) and choose your own password.\nThen delete this file.\n`, { mode: 0o600 });
+  console.log('temporary password set for', email, '— saved to', file);
 })();

@@ -27,9 +27,10 @@ export async function middleware(req: NextRequest) {
       },
     },
   });
-  const { data: { user } } = await supabase.auth.getUser();
+  // verifies the login token locally (and refreshes it when needed) — no extra round trip on every click
+  const { data } = await supabase.auth.getClaims();
   const isLogin = pathname.startsWith('/admin/login') || pathname.startsWith('/admin/auth');
-  if (!user && !isLogin) {
+  if (!data?.claims?.sub && !isLogin) {
     const url = req.nextUrl.clone(); url.pathname = '/admin/login'; url.search = '';
     return NextResponse.redirect(url);
   }

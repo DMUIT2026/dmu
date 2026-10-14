@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { Amiri, Fraunces, IBM_Plex_Sans_Arabic, Plus_Jakarta_Sans } from 'next/font/google';
 import { dirOf, isLocale, locales } from '@/lib/i18n';
 import '../globals.css';
+import { a11yBootScript } from '@/components/site/AccessibilityToolbar';
 
 const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces', display: 'swap', axes: ['opsz', 'SOFT'] });
 const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta', display: 'swap' });
@@ -30,7 +31,8 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   return (
-    <html lang={locale} dir={dirOf(locale)} data-scroll-behavior="smooth" className={`${fraunces.variable} ${jakarta.variable} ${amiri.variable} ${plexAr.variable}`}>
+    <html suppressHydrationWarning lang={locale} dir={dirOf(locale)} data-scroll-behavior="smooth" className={`${fraunces.variable} ${jakarta.variable} ${amiri.variable} ${plexAr.variable}`}>
+      <head><script dangerouslySetInnerHTML={{ __html: a11yBootScript }} /></head>
       <body>{children}</body>
     </html>
   );

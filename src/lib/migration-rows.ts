@@ -23,9 +23,9 @@ const LIB = 'https://oppeygclkxogrsmsafng.supabase.co/storage/v1/object/public/m
 const UP = 'https://dmu.ae/home/wp-content/uploads/';
 const DEFAULT_HERO: Record<string, string> = {
   'college-of-medicine': UP + '2026/08/dmucom26_header1.jpg',
-  'college-of-pharmacy': UP + '2026/08/pharmacy_header26_1.jpg',
-  'college-of-nursing': UP + '2026/07/con_header30.jpg',
-  'college-of-health-sciences': UP + '2026/09/cohs_dmheader_59.jpg',
+  'college-of-pharmacy': UP + '2026/08/pharmacy_header26_4.jpg',
+  'college-of-nursing': UP + '2026/07/con_studentsc_header.jpg',
+  'college-of-health-sciences': UP + '2026/07/cohs_studentsc_header.jpg',
   '': UP + '2026/08/dmu_header99.jpg',
 };
 /** The old site sometimes used a plain pattern, a logo or nothing as the banner; use a real campus photo instead. */

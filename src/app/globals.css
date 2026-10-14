@@ -155,3 +155,20 @@ body {
 @keyframes marquee-rtl { from { transform: translateX(0); } to { transform: translateX(50%); } }
 /* numbers, emails, phone numbers and course codes keep left-to-right order */
 [dir="rtl"] .prose-dmu a[href^="mailto:"], [dir="rtl"] .prose-dmu a[href^="tel:"], [dir="rtl"] .ltr { direction: ltr; unicode-bidi: isolate; }
+
+/* ---------- accessibility options (toolbar) ---------- */
+html.a11y-contrast { --color-stone-500: #2f2a24; --color-line: #8a7f6c; }
+html.a11y-contrast body { color: #000; }
+html.a11y-contrast [class*="text-ink/"], html.a11y-contrast .prose-dmu { color: #000 !important; }
+html.a11y-contrast [class*="text-white/"] { color: #fff !important; }
+html.a11y-contrast .text-bronze-600, html.a11y-contrast .text-bronze-700, html.a11y-contrast .eyebrow { color: #5a3a14 !important; }
+html.a11y-contrast .bg-espresso .eyebrow, html.a11y-contrast .bg-espresso .text-bronze-600 { color: #f3d98a !important; }
+html.a11y-contrast img { filter: contrast(1.05); }
+html.a11y-contrast :focus-visible { outline: 3px solid #000; }
+html.a11y-links a { text-decoration: underline !important; text-underline-offset: 3px; }
+html.a11y-font body, html.a11y-font .font-display, html.a11y-font .prose-dmu h2, html.a11y-font .prose-dmu h3, html.a11y-font .prose-dmu h4,
+html.a11y-font .prose-dmu .card strong, html.a11y-font .prose-dmu .stat strong {
+  font-family: Verdana, Tahoma, "Segoe UI", system-ui, sans-serif !important; letter-spacing: 0 !important;
+}
+html.a11y-spacing .prose-dmu, html.a11y-spacing p, html.a11y-spacing li { line-height: 2.1 !important; word-spacing: .12em; }
+html.a11y-still *, html.a11y-still *::before, html.a11y-still *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

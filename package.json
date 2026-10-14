@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "dmu-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,7 +21,7 @@
     "@tiptap/starter-kit": "^3.6.5",
     "cheerio": "^1.1.2",
     "lucide-react": "^0.545.0",
-    "next": "15.5.4",
+    "next": "^15.5.27",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "sanitize-html": "^2.17.0",
@@ -38,7 +38,7 @@
     "@types/sanitize-html": "^2.16.2",
     "dotenv": "^18.0.7",
     "eslint": "^9",
-    "eslint-config-next": "15.5.4",
+    "eslint-config-next": "^15.5.27",
     "mime-types": "^3.0.1",
     "pg": "^8.16.3",
     "tailwindcss": "^4",

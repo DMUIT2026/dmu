@@ -18,8 +18,12 @@ export const dynamicParams = true;
 
 export async function generateStaticParams() {
   if (process.env.SKIP_PRERENDER) return [];
-  const paths = await getAllPagePaths();
-  return paths.filter(Boolean).map(p => ({ path: p.split('/') }));
+  try {
+    const paths = await getAllPagePaths();
+    return paths.filter(Boolean).map(p => ({ path: p.split('/') }));
+  } catch {
+    return []; // pages are then built on first visit
+  }
 }
 
 type Props = { params: Promise<{ path: string[] }>; searchParams: Promise<{ page?: string }> };

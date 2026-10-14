@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import { useState, useTransition } from 'react';
 import { ArrowDown, ArrowUp, Plus, Trash2 } from 'lucide-react';

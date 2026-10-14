@@ -6,22 +6,43 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "import": "tsx scripts/import.ts",
+    "extract": "node scripts/migrate/extract.mjs"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.58.0",
+    "@tiptap/extension-image": "^3.6.5",
+    "@tiptap/extension-link": "^3.6.5",
+    "@tiptap/extension-table": "^3.6.5",
+    "@tiptap/extension-text-align": "^3.6.5",
+    "@tiptap/react": "^3.6.5",
+    "@tiptap/starter-kit": "^3.6.5",
+    "cheerio": "^1.1.2",
+    "lucide-react": "^0.545.0",
+    "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "sanitize-html": "^2.17.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/mime-types": "^3.0.1",
     "@types/node": "^20",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "@types/sanitize-html": "^2.16.2",
+    "dotenv": "^18.0.7",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "@eslint/eslintrc": "^3"
+    "mime-types": "^3.0.1",
+    "pg": "^8.16.3",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
   }
 }

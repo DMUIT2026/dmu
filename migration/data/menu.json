@@ -1,0 +1,296 @@
+{
+ "main": [
+  {
+   "label": "About Us",
+   "url": null,
+   "children": [
+    {
+     "label": "Vision and Mission",
+     "url": "/vision-and-mission"
+    },
+    {
+     "label": "Goals and Objectives",
+     "url": "/goals-and-objectives"
+    },
+    {
+     "label": "VCA Message",
+     "url": "/vca-message"
+    },
+    {
+     "label": "Board of Trustees",
+     "url": "/board-of-trustees"
+    },
+    {
+     "label": "Organization Structure",
+     "url": "/organization-chart"
+    },
+    {
+     "label": "QAIE",
+     "url": null,
+     "children": [
+      {
+       "label": "QAIE Department",
+       "url": "/qa-ie-unit"
+      },
+      {
+       "label": "QAIE Organizational Chart",
+       "url": "/qa-ie-organizational-chart"
+      },
+      {
+       "label": "QAIE Team Members",
+       "url": "/qaie-team"
+      },
+      {
+       "label": "QAIE News",
+       "url": "/qaie-news"
+      },
+      {
+       "label": "QAIE Portal",
+       "url": "/qaie-portal"
+      }
+     ]
+    },
+    {
+     "label": "Accreditation and Ranking",
+     "url": "/accreditation-and-ranking"
+    },
+    {
+     "label": "Job Vacancies",
+     "url": "https://admin.qadmu.com/careers"
+    },
+    {
+     "label": "Faculty and Staff Directory",
+     "url": "/dmu-faculty-and-staff-directory"
+    }
+   ]
+  },
+  {
+   "label": "Academics",
+   "url": null,
+   "children": [
+    {
+     "label": "College of Medicine",
+     "url": "/college-of-medicine"
+    },
+    {
+     "label": "College of Pharmacy",
+     "url": "/college-of-pharmacy"
+    },
+    {
+     "label": "College of Nursing",
+     "url": "/college-of-nursing"
+    },
+    {
+     "label": "College of Health Sciences",
+     "url": "/college-of-health-sciences"
+    },
+    {
+     "label": "General Education",
+     "url": null,
+     "children": [
+      {
+       "label": "General Education at DMU",
+       "url": "/general-education-at-dmu"
+      },
+      {
+       "label": "General Education Goals",
+       "url": "/general-education-goals"
+      },
+      {
+       "label": "GE Learning Outcomes",
+       "url": "/general-education-learning-outcomes"
+      },
+      {
+       "label": "GE Courses & Credit Hours",
+       "url": "/ge-courses-credit-hours"
+      }
+     ]
+    },
+    {
+     "label": "Academic Calendar",
+     "url": "/academic-calendar-2"
+    },
+    {
+     "label": "Training Programs",
+     "url": "/training-programs"
+    }
+   ]
+  },
+  {
+   "label": "Admissions",
+   "url": null,
+   "children": [
+    {
+     "label": "Apply to DMU",
+     "url": "/admissions"
+    },
+    {
+     "label": "Fees and Scholarships",
+     "url": "/fees-and-scholarships"
+    }
+   ]
+  },
+  {
+   "label": "Life at DMU",
+   "url": null,
+   "children": [
+    {
+     "label": "Learning Resource Centre",
+     "url": "/learning-resource-centre"
+    },
+    {
+     "label": "Simulation Centre",
+     "url": "/simulation-centre"
+    },
+    {
+     "label": "Facilities",
+     "url": null,
+     "children": [
+      {
+       "label": "Academic Advising",
+       "url": "/academic-advising"
+      },
+      {
+       "label": "Hostel",
+       "url": "/hostel-facilities"
+      },
+      {
+       "label": "Facilities and Services",
+       "url": "/facilities-services"
+      }
+     ]
+    },
+    {
+     "label": "Student Affairs",
+     "url": null,
+     "children": [
+      {
+       "label": "Student Affairs",
+       "url": "/student-affairs"
+      },
+      {
+       "label": "Student Affairs Activities",
+       "url": "/dsa-news"
+      },
+      {
+       "label": "Student Council",
+       "url": "/student-council"
+      },
+      {
+       "label": "Students in Governance",
+       "url": "/students-governance"
+      },
+      {
+       "label": "Cohort Representatives",
+       "url": "/cohort-representatives"
+      },
+      {
+       "label": "Student Clubs and Hives",
+       "url": "/student-clubs-and-hives"
+      }
+     ]
+    },
+    {
+     "label": "Diversity, Equity and Inclusion",
+     "url": "/diversity-equity-and-inclusion-dei"
+    },
+    {
+     "label": "AI and Smart Education Unit",
+     "url": "https://smarteducation.dmu.ae/"
+    },
+    {
+     "label": "Sustainability",
+     "url": "https://sustainability.dmu.ae/"
+    }
+   ]
+  },
+  {
+   "label": "Research",
+   "url": "https://research.dmu.ae"
+  },
+  {
+   "label": "Media",
+   "url": null,
+   "children": [
+    {
+     "label": "DMU Publications",
+     "url": "/dmu-publications"
+    },
+    {
+     "label": "News & Events",
+     "url": null,
+     "children": [
+      {
+       "label": "DMU News",
+       "url": "/dmu-news"
+      },
+      {
+       "label": "College of Medicine News",
+       "url": "/college-of-medicine/events-2"
+      },
+      {
+       "label": "College of Pharmacy News",
+       "url": "/college-of-pharmacy/dpcg-events-2"
+      },
+      {
+       "label": "College of Nursing News",
+       "url": "/college-of-nursing/con-events-2"
+      },
+      {
+       "label": "QAIE News",
+       "url": "/qaie-news"
+      },
+      {
+       "label": "Student Affairs Activities",
+       "url": "/dsa-news"
+      },
+      {
+       "label": "Community Engagement Events",
+       "url": "/community-engagement-events"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Alumni",
+   "url": "https://alumni.dmu.ae/"
+  }
+ ],
+ "footer_quick": [
+  {
+   "label": "LMS Login",
+   "url": "https://dmug.brightspace.com/d2l/login"
+  },
+  {
+   "label": "Email Login",
+   "url": "https://www.office.com/?auth=2"
+  },
+  {
+   "label": "Academic Calendar",
+   "url": "/academic-calendar-2"
+  },
+  {
+   "label": "Contact Us",
+   "url": "/contact-us"
+  }
+ ],
+ "footer_colleges": [
+  {
+   "label": "College of Health Sciences",
+   "url": "/college-of-health-sciences"
+  },
+  {
+   "label": "College of Medicine",
+   "url": "/college-of-medicine"
+  },
+  {
+   "label": "College of Nursing",
+   "url": "/college-of-nursing"
+  },
+  {
+   "label": "College of Pharmacy",
+   "url": "/college-of-pharmacy"
+  }
+ ]
+}

@@ -1,0 +1,114 @@
+[
+ {
+  "title": "Bachelor of Science in Anesthesia Technology",
+  "url": "/college-of-health-sciences/bachelor-of-science-in-anesthesia-technology",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/08/cohs_anasth1.jpg",
+  "start_date": "August 2027",
+  "sort_order": 0
+ },
+ {
+  "title": "Bachelor of Science in Audiology and Speech Language Pathology",
+  "url": "/college-of-health-sciences/bachelor-of-science-in-audiology-and-speech-language-pathology",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/08/cohs_audio.jpg",
+  "start_date": "August 2027",
+  "sort_order": 1
+ },
+ {
+  "title": "Bachelor of Science in Medical Imaging Sciences",
+  "url": "/college-of-health-sciences/bachelor-of-science-in-medical-imaging-sciences",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/08/cohs_imaging.jpg",
+  "start_date": "August 2027",
+  "sort_order": 2
+ },
+ {
+  "title": "Bachelor of Science in Optometry",
+  "url": "/college-of-health-sciences/bachelor-of-science-in-optometry",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/08/cohs_opto.jpg",
+  "start_date": "August 2027",
+  "sort_order": 3
+ },
+ {
+  "title": "Doctor of Medicine",
+  "url": "/college-of-medicine/doctor-of-medicine",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/02/dmucom_prgmd1.jpg",
+  "start_date": "August 2027",
+  "sort_order": 4
+ },
+ {
+  "title": "Bachelor of Biomedical Science",
+  "url": "/college-of-medicine/bachelor-of-biomedical-science",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/02/dmucom_prgbbms1.jpg",
+  "start_date": "August 2027",
+  "sort_order": 5
+ },
+ {
+  "title": "Bachelor of Pharmacy",
+  "url": "/college-of-pharmacy/bachelor-of-pharmacy",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/02/dmucop_prgbpharm1.jpg",
+  "start_date": "August 2027",
+  "sort_order": 6
+ },
+ {
+  "title": "Bachelor of Science in Nursing",
+  "url": "/college-of-nursing/bachelor-of-science-in-nursing",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/02/dmucon_prgbsn1.jpg",
+  "start_date": "August 2027",
+  "sort_order": 7
+ },
+ {
+  "title": "Master of Science in Drug Discovery & Development",
+  "url": "/college-of-pharmacy/master-of-science-in-drug-discovery-and-development",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/02/dmucop_prgbdde1.jpg",
+  "start_date": "January 2027",
+  "sort_order": 8
+ },
+ {
+  "title": "Master of Pharmacy (Clinical Pharmacy)",
+  "url": "/college-of-pharmacy/master-of-pharmacy",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/02/dmucop_prgmpharm1.jpg",
+  "start_date": "January 2027",
+  "sort_order": 9
+ },
+ {
+  "title": "Doctor of Pharmacy",
+  "url": "/college-of-pharmacy/doctor-of-pharmacy",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/02/dmucop_prgpharmd1.jpg",
+  "start_date": "August 2027",
+  "sort_order": 10
+ },
+ {
+  "title": "Master of Science in Health Professions Education",
+  "url": "/college-of-medicine/master-of-science-in-health-professions-education",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/02/dmucom_prghspe1.jpg",
+  "start_date": "January 2027",
+  "sort_order": 11
+ },
+ {
+  "title": "Master of Global & Digital Public Health Leadership",
+  "url": "/college-of-medicine/master-of-global-and-digital-public-health-leadership",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/05/dmucom_master2.jpg",
+  "start_date": "January 2027",
+  "sort_order": 12
+ },
+ {
+  "title": "Doctor of Pharmacy – Post Bachelor PharmD",
+  "url": "/college-of-pharmacy/doctor-of-pharmacy-post-bachelor",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/05/post_bal_pharmD_new2.jpg",
+  "start_date": "August 2027",
+  "sort_order": 13
+ },
+ {
+  "title": "Master of Science in Critical Care Nursing",
+  "url": "/college-of-nursing/master-of-science-in-critical-care-nursing",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/08/con_cccare.jpg",
+  "start_date": "January 2027",
+  "sort_order": 14
+ },
+ {
+  "title": "Master of Science in Geriatric Nursing",
+  "url": "/college-of-nursing/master-of-science-in-geriatric-nursing",
+  "image": "https://dmu.ae/home/wp-content/uploads/2026/08/con_gnursing.jpg",
+  "start_date": "January 2027",
+  "sort_order": 15
+ }
+]

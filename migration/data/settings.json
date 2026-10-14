@@ -1,0 +1,2447 @@
+{
+ "contact": {
+  "phone": "800DMU1 (8003681)",
+  "phone_link": "tel:8003681",
+  "email": "info@dmu.ae",
+  "address": "P.O.BOX: 20170, Al Mizhar\nDubai - United Arab Emirates"
+ },
+ "social": [
+  {
+   "label": "Facebook",
+   "url": "https://www.facebook.com/dubaimedicaluniversity"
+  },
+  {
+   "label": "Twitter",
+   "url": "https://x.com/DMUCampus"
+  },
+  {
+   "label": "LinkedIn",
+   "url": "https://www.linkedin.com/company/dubaimedicaluniversity/"
+  },
+  {
+   "label": "Instagram",
+   "url": "https://www.instagram.com/dubaimedicaluniversity_dmu"
+  },
+  {
+   "label": "YouTube",
+   "url": "https://www.youtube.com/@DubaiMedicalUniversity"
+  }
+ ],
+ "home_hero": {
+  "slides": [
+   {
+    "image": "https://dmu.ae/home/wp-content/uploads/2026/07/nafis_vsslider1.jpg"
+   }
+  ]
+ },
+ "home_colleges": [
+  {
+   "title": "College of Medicine",
+   "url": "/college-of-medicine",
+   "icon": "https://dmu.ae/home/wp-content/uploads/2026/02/dmucom_newicon2026.png"
+  },
+  {
+   "title": "College of Pharmacy",
+   "url": "/college-of-pharmacy",
+   "icon": "https://dmu.ae/home/wp-content/uploads/2026/02/dmucop_newicon2026.png"
+  },
+  {
+   "title": "College of Nursing",
+   "url": "/college-of-nursing",
+   "icon": "https://dmu.ae/home/wp-content/uploads/2026/02/dmucon_newicon2026c.png"
+  },
+  {
+   "title": "College of Health Sciences",
+   "url": "/college-of-health-sciences",
+   "icon": "https://dmu.ae/home/wp-content/uploads/2026/03/dmucohs_newicon2026.png"
+  }
+ ],
+ "home_stats": {
+  "title": "Why study at Dubai Medical University?",
+  "items": [
+   {
+    "value": "1st",
+    "label": "Medical College in UAE"
+   },
+   {
+    "value": "52+",
+    "label": "Nationalities"
+   },
+   {
+    "value": "79+",
+    "label": "Employability Rate"
+   },
+   {
+    "value": "21+",
+    "label": "Clubs & Organizations"
+   }
+  ]
+ },
+ "home_alumni": {
+  "title": "Where DMU Alumni Work",
+  "logos": [
+   "https://dmu.ae/home/wp-content/uploads/2025/09/partnerdmu_10.jpg",
+   "https://dmu.ae/home/wp-content/uploads/2025/09/partnerdmu_9.jpg",
+   "https://dmu.ae/home/wp-content/uploads/2025/09/partnerdmu_8.jpg",
+   "https://dmu.ae/home/wp-content/uploads/2025/09/partnerdmu_7.jpg",
+   "https://dmu.ae/home/wp-content/uploads/2025/09/partnerdmu_6.jpg",
+   "https://dmu.ae/home/wp-content/uploads/2025/09/partnerdmu_5.jpg",
+   "https://dmu.ae/home/wp-content/uploads/2025/09/partnerdmu_4.jpg",
+   "https://dmu.ae/home/wp-content/uploads/2025/09/partnerdmu_3.jpg",
+   "https://dmu.ae/home/wp-content/uploads/2025/09/partnerdmu_2.jpg",
+   "https://dmu.ae/home/wp-content/uploads/2025/09/partnerdmu_1.jpg",
+   "https://dmu.ae/home/wp-content/uploads/2025/09/partnerdmu_11.jpg"
+  ]
+ },
+ "navs": {
+  "side-b55f156233": {
+   "title": "QAIE",
+   "groups": [
+    {
+     "title": "QAIE",
+     "links": [
+      {
+       "label": "About QAIE",
+       "url": "/qa-ie-unit"
+      },
+      {
+       "label": "QAIE Organizational Chart",
+       "url": "/qa-ie-organizational-chart"
+      },
+      {
+       "label": "QAIE Team Members",
+       "url": "/qaie-team"
+      },
+      {
+       "label": "QAIE News",
+       "url": "/qaie-news"
+      },
+      {
+       "label": "QAIE Portal",
+       "url": "/qaie-portal"
+      }
+     ]
+    }
+   ]
+  },
+  "college-ee816e8d22": {
+   "title": "College of Medicine (COM)",
+   "url": null,
+   "groups": [
+    {
+     "title": "Discover",
+     "links": [
+      {
+       "label": "Why College of Medicine",
+       "url": "/college-of-medicine/about-dmcg"
+      },
+      {
+       "label": "Vision and Mission",
+       "url": "/dmcg-vision-mission"
+      },
+      {
+       "label": "Goals and Objectives",
+       "url": "/college-of-medicine/dmcg-goals-and-objectives"
+      },
+      {
+       "label": "Organization Chart",
+       "url": "/college-of-medicine/dmcg-organization-structure"
+      },
+      {
+       "label": "Dean's Message",
+       "url": "/college-of-medicine/message-from-dmcg-dean"
+      },
+      {
+       "label": "COM Leadership",
+       "url": "/college-of-medicine/dmcg-leadership"
+      }
+     ]
+    },
+    {
+     "title": "Programs",
+     "links": [
+      {
+       "label": "Doctor of Medicine 6 Years",
+       "url": "/college-of-medicine/doctor-of-medicine"
+      },
+      {
+       "label": "Doctor of Medicine 4 Years",
+       "url": "/college-of-medicine/doctor-of-medicine-4-years"
+      },
+      {
+       "label": "Bachelor of Biomedical Science",
+       "url": "/college-of-medicine/bachelor-of-biomedical-science"
+      },
+      {
+       "label": "MS in Health Professions Education",
+       "url": "/college-of-medicine/master-of-science-in-health-professions-education"
+      },
+      {
+       "label": "Master of Global & Digital Public Health Leadership",
+       "url": "/college-of-medicine/master-of-global-and-digital-public-health-leadership"
+      },
+      {
+       "label": "PG Diploma in Health Professions Education",
+       "url": "/college-of-medicine/postgraduate-diploma-in-health-professions-education"
+      },
+      {
+       "label": "PG Diploma in Global & Digital Public Health Leadership",
+       "url": "/college-of-medicine/pg-diploma-in-global-digital-public-health-leadership"
+      }
+     ]
+    },
+    {
+     "title": "Admissions",
+     "links": [
+      {
+       "label": "Admission Criteria",
+       "url": null,
+       "children": [
+        {
+         "label": "Doctor of Medicine 6 Year",
+         "url": "/college-of-medicine/doctor-of-medicine-6-year-program-admission"
+        },
+        {
+         "label": "Doctor of Medicine 4 Year",
+         "url": "/college-of-medicine/doctor-of-medicine-4-year-program-admission"
+        },
+        {
+         "label": "Bachelor of Biomedical Science",
+         "url": "/college-of-medicine/bachelor-of-biomedical-science-admission"
+        },
+        {
+         "label": "MS in Health Professions Education",
+         "url": "/college-of-medicine/master-of-science-in-health-professions-education-admission"
+        },
+        {
+         "label": "Master of Global & Digital Public Health Leadership",
+         "url": "/college-of-medicine/master-of-global-and-digital-public-health-leadership-admission"
+        },
+        {
+         "label": "PG Diploma in Health Professions Education",
+         "url": "/college-of-medicine/postgraduate-diploma-in-health-professions-education-admission"
+        },
+        {
+         "label": "PG Diploma in Global & Digital Public Health Leadership",
+         "url": "/college-of-medicine/pg-diploma-in-global-digital-public-health-leadership-admission"
+        }
+       ]
+      },
+      {
+       "label": "Tuition Fees",
+       "url": "/college-of-medicine/dmucom-tuition-fees"
+      },
+      {
+       "label": "Transfer from other Colleges",
+       "url": "/college-of-medicine/dmcg-transfer-from-other-colleges"
+      }
+     ]
+    },
+    {
+     "title": "COM Research",
+     "links": [
+      {
+       "label": "Research Publications",
+       "url": "/college-of-medicine/com-research-publications"
+      },
+      {
+       "label": "Research Policies",
+       "url": "/college-of-medicine/com-research-policy"
+      },
+      {
+       "label": "Dissertations",
+       "url": "/college-of-medicine/com-research-dissertations"
+      },
+      {
+       "label": "Laboratories",
+       "url": "https://research.dmu.ae/laboratories/"
+      }
+     ]
+    }
+   ]
+  },
+  "college-4cbf98ac42": {
+   "title": "College of Pharmacy (COP)",
+   "url": null,
+   "groups": [
+    {
+     "title": "Discover",
+     "links": [
+      {
+       "label": "Why College of Pharmacy",
+       "url": "/college-of-pharmacy/about-dpcg"
+      },
+      {
+       "label": "Vision and Mission",
+       "url": "/college-of-pharmacy/dpcg-vision-mission-2"
+      },
+      {
+       "label": "Goals and Objectives",
+       "url": "/college-of-pharmacy/dpcg-goals-and-objectives"
+      },
+      {
+       "label": "Organization Chart",
+       "url": "/college-of-pharmacy/dpcg-organization-structure"
+      },
+      {
+       "label": "Dean's Message",
+       "url": "/college-of-pharmacy/message-from-dpcg-dean"
+      },
+      {
+       "label": "Advisory Board",
+       "url": "/college-of-pharmacy/cop-advisory-board"
+      },
+      {
+       "label": "Student Success Center",
+       "url": "/college-of-pharmacy/cop-student-success-center"
+      }
+     ]
+    },
+    {
+     "title": "Programs",
+     "links": [
+      {
+       "label": "Bachelor of Pharmacy",
+       "url": "/college-of-pharmacy/bachelor-of-pharmacy"
+      },
+      {
+       "label": "Doctor of Pharmacy (PharmD)",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy"
+      },
+      {
+       "label": "Master of Pharmacy",
+       "url": "/college-of-pharmacy/master-of-pharmacy"
+      },
+      {
+       "label": "Master of Science in Drug Discovery and Development",
+       "url": "/college-of-pharmacy/master-of-science-in-drug-discovery-and-development"
+      },
+      {
+       "label": "PharmD Post-Bachelor",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy-post-bachelor"
+      },
+      {
+       "label": "PG Diploma in Drug Discovery and Development",
+       "url": "/college-of-pharmacy/postgraduate-diploma-in-drug-discovery-and-development"
+      }
+     ]
+    },
+    {
+     "title": "Admissions",
+     "links": [
+      {
+       "label": "Admission Criteria",
+       "url": null,
+       "children": [
+        {
+         "label": "Bachelor of Pharmacy",
+         "url": "/college-of-pharmacy/bachelor-of-pharmacy-admission"
+        },
+        {
+         "label": "Doctor of Pharmacy",
+         "url": "/college-of-pharmacy/doctor-of-pharmacy-admission"
+        },
+        {
+         "label": "Master of Pharmacy",
+         "url": "/college-of-pharmacy/master-of-pharmacy-admission"
+        },
+        {
+         "label": "Master of Science in Drug Discovery & Development",
+         "url": "/college-of-pharmacy/msc-drug-discovery-and-development-admission"
+        },
+        {
+         "label": "PharmD Post-Bachelor",
+         "url": "/college-of-pharmacy/pharmd-post-bachelor-admission"
+        },
+        {
+         "label": "PG Diploma in Drug Discovery and Development",
+         "url": "/college-of-pharmacy/postgraduate-diploma-in-drug-discovery-and-development-admission"
+        }
+       ]
+      },
+      {
+       "label": "Tuition Fees",
+       "url": "/college-of-pharmacy/dpcg-tuition-fees"
+      },
+      {
+       "label": "Transfer from other Colleges",
+       "url": "/college-of-pharmacy/dpcg-transfer-from-other-colleges"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/college-of-pharmacy/dpcg-frequently-asked-questions"
+      }
+     ]
+    },
+    {
+     "title": "COP Research",
+     "links": [
+      {
+       "label": "Research Publications",
+       "url": "/college-of-pharmacy/cop-research-publications"
+      },
+      {
+       "label": "Research Policies",
+       "url": "/college-of-pharmacy/cop-research-policies"
+      },
+      {
+       "label": "Laboratories",
+       "url": "https://research.dmu.ae/home/laboratories/"
+      }
+     ]
+    }
+   ]
+  },
+  "college-16435e9348": {
+   "title": "College of Nursing (CON)",
+   "url": null,
+   "groups": [
+    {
+     "title": "Discover",
+     "links": [
+      {
+       "label": "Why College of Nursing",
+       "url": "/college-of-nursing/about-con"
+      },
+      {
+       "label": "Vision and Mission",
+       "url": "/college-of-nursing/con-vision-mission"
+      },
+      {
+       "label": "Aims and Objectives",
+       "url": "/college-of-nursing/con-goals-and-objectives"
+      },
+      {
+       "label": "Organization Chart",
+       "url": "/college-of-nursing/con-organization-structure"
+      },
+      {
+       "label": "Dean's Message",
+       "url": "/college-of-nursing/message-from-con-dean"
+      },
+      {
+       "label": "Student Success Center",
+       "url": "/college-of-nursing/con-student-success-center"
+      }
+     ]
+    },
+    {
+     "title": "Programs",
+     "links": [
+      {
+       "label": "Bachelor of Science in Nursing",
+       "url": "/college-of-nursing/bachelor-of-science-in-nursing"
+      },
+      {
+       "label": "Master of Science in Critical Care Nursing",
+       "url": "/college-of-nursing/master-of-science-in-critical-care-nursing"
+      },
+      {
+       "label": "Master of Science in Geriatric Nursing",
+       "url": "/college-of-nursing/master-of-science-in-geriatric-nursing"
+      }
+     ]
+    },
+    {
+     "title": "Admissions",
+     "links": [
+      {
+       "label": "Admission Criteria",
+       "url": null,
+       "children": [
+        {
+         "label": "Bachelor of Science in Nursing",
+         "url": "/college-of-nursing/bachelor-of-science-in-nursing-admission"
+        },
+        {
+         "label": "Master of Science in Critical Care Nursing",
+         "url": "/college-of-nursing/master-of-science-in-critical-care-nursing-admissions"
+        },
+        {
+         "label": "Master of Science in Geriatric Nursing",
+         "url": "/college-of-nursing/master-of-science-in-geriatric-nursing-admissions"
+        }
+       ]
+      },
+      {
+       "label": "Tuition Fees",
+       "url": "/college-of-nursing/con-tuition-fees"
+      },
+      {
+       "label": "Transfer from other Colleges",
+       "url": "/college-of-nursing/con-transfer-from-other-colleges"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/college-of-nursing/con-frequently-asked-questions"
+      }
+     ]
+    },
+    {
+     "title": "Nursing Simulation Center",
+     "links": []
+    }
+   ]
+  },
+  "college-54a3355c28": {
+   "title": "College of Health Sciences (COHS)",
+   "url": null,
+   "groups": [
+    {
+     "title": "Discover",
+     "links": [
+      {
+       "label": "Why College of Health Sciences",
+       "url": "/college-of-health-sciences/about-cohs"
+      },
+      {
+       "label": "Dean's Message",
+       "url": "/college-of-health-sciences/message-from-cohs-dean"
+      },
+      {
+       "label": "Student Success Center",
+       "url": "/college-of-health-sciences/cohs-student-success-center"
+      }
+     ]
+    },
+    {
+     "title": "Programs",
+     "links": [
+      {
+       "label": "Bachelor of Science in Anesthesia Technology",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-anesthesia-technology"
+      },
+      {
+       "label": "Bachelor of Science in Audiology and Speech Language Pathology",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-audiology-and-speech-language-pathology"
+      },
+      {
+       "label": "Bachelor of Science in Medical Imaging Sciences",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-medical-imaging-sciences"
+      },
+      {
+       "label": "Bachelor of Science in Optometry",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-optometry"
+      }
+     ]
+    },
+    {
+     "title": "Admissions",
+     "links": [
+      {
+       "label": "Admission Criteria",
+       "url": null,
+       "children": [
+        {
+         "label": "Bachelor of Science in Anesthesia Technology",
+         "url": "/college-of-health-sciences/bachelor-of-science-in-anesthesia-technology-admission"
+        },
+        {
+         "label": "Bachelor of Science in Audiology and Speech Language Pathology",
+         "url": "/college-of-health-sciences/bachelor-of-science-in-audiology-and-speech-language-pathology-admission"
+        },
+        {
+         "label": "Bachelor of Science in Medical Imaging Sciences",
+         "url": "/college-of-health-sciences/bachelor-of-science-in-medical-imaging-sciences-admission"
+        },
+        {
+         "label": "Bachelor of Science in Optometry",
+         "url": "/college-of-health-sciences/bachelor-of-science-in-optometry-admission"
+        }
+       ]
+      },
+      {
+       "label": "Tuition Fees",
+       "url": "/college-of-health-sciences/cohs-tuition-fees"
+      }
+     ]
+    }
+   ]
+  },
+  "side-1aec3b8e05": {
+   "title": "General Education",
+   "groups": [
+    {
+     "title": "General Education",
+     "links": [
+      {
+       "label": "About General Education",
+       "url": "/general-education-at-dmu"
+      },
+      {
+       "label": "General Education Goals",
+       "url": "/general-education-goals"
+      },
+      {
+       "label": "GE Learning Outcomes",
+       "url": "/general-education-learning-outcomes"
+      },
+      {
+       "label": "GE Courses & Credit Hours",
+       "url": "/ge-courses-credit-hours"
+      }
+     ]
+    }
+   ]
+  },
+  "side-35b3575c3e": {
+   "title": "Downloads",
+   "groups": [
+    {
+     "title": "Downloads",
+     "links": [
+      {
+       "label": "Academic Calendar 2026-2027",
+       "url": "https://dmu.ae/home/wp-content/uploads/2026/08/Academic_Calender_26_27.pdf"
+      },
+      {
+       "label": "Academic Calendar 2025-2026",
+       "url": "https://dmu.ae/home/wp-content/uploads/2026/02/DMU_AcademicCalendar_2025-2026_v1.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "side-0a2277fcd5": {
+   "title": "Simulation Centre",
+   "groups": [
+    {
+     "title": "Simulation Centre",
+     "links": [
+      {
+       "label": "About Simulation Center",
+       "url": "/simulation-centre"
+      },
+      {
+       "label": "The Facility",
+       "url": "/simulation-facility"
+      },
+      {
+       "label": "Learning Resources",
+       "url": "/simulation-learning-resources"
+      },
+      {
+       "label": "Contact Simulation Center",
+       "url": "/contact-simulation-center"
+      }
+     ]
+    }
+   ]
+  },
+  "side-d3e3f82d71": {
+   "title": "Facilities",
+   "groups": [
+    {
+     "title": "Facilities",
+     "links": [
+      {
+       "label": "Academic Advising",
+       "url": "/academic-advising"
+      },
+      {
+       "label": "Hostel",
+       "url": "/hostel-facilities"
+      },
+      {
+       "label": "Facilities and Services",
+       "url": "/facilities-services"
+      }
+     ]
+    }
+   ]
+  },
+  "side-eea3150663": {
+   "title": "Facilities",
+   "groups": [
+    {
+     "title": "Facilities",
+     "links": [
+      {
+       "label": "Academic Advising",
+       "url": "/academic-advising"
+      },
+      {
+       "label": "Hostel",
+       "url": "/hostel-facilities"
+      },
+      {
+       "label": "Facilities and Services",
+       "url": "/facilities-services"
+      }
+     ]
+    },
+    {
+     "title": "Fees and Scholarships",
+     "links": [
+      {
+       "label": "Tuition Fees",
+       "url": "/admission-tuition-fees"
+      },
+      {
+       "label": "Transportation",
+       "url": "/transportation-2"
+      },
+      {
+       "label": "Payment Method",
+       "url": "/payment-method"
+      },
+      {
+       "label": "Visa & Insurance",
+       "url": "/visa-insurance"
+      }
+     ]
+    }
+   ]
+  },
+  "side-0dc15a957f": {
+   "title": "Student Affairs",
+   "groups": [
+    {
+     "title": "Student Affairs",
+     "links": [
+      {
+       "label": "Student Affairs",
+       "url": "/student-affairs"
+      },
+      {
+       "label": "Student Affairs Activities",
+       "url": "/dsa-news"
+      },
+      {
+       "label": "DMU Student Council",
+       "url": "/student-council"
+      },
+      {
+       "label": "Students in Governance",
+       "url": "/students-governance"
+      },
+      {
+       "label": "Cohort Representatives",
+       "url": "/cohort-representatives"
+      },
+      {
+       "label": "Student Clubs and Hives",
+       "url": "/student-clubs-and-hives"
+      }
+     ]
+    }
+   ]
+  },
+  "side-f5b4d704d7": {
+   "title": "Anesthesia Technology Program",
+   "groups": [
+    {
+     "title": "Anesthesia Technology Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-anesthesia-technology"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-health-sciences/bs-antech-accreditation"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-health-sciences/bs-antech-program-learning-outcomes"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-health-sciences/bs-antech-study-plan"
+      },
+      {
+       "label": "Curriculum",
+       "url": "/college-of-health-sciences/bs-antech-Curriculum"
+      },
+      {
+       "label": "Graduation Criteria",
+       "url": "/college-of-health-sciences/bs-antech-graduation-criteria"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-anesthesia-technology-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-health-sciences/bs-anesthesia-technology-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-health-sciences/bs-in-anesthesia-technology-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-health-sciences/bs-anesthesia-technology-guide-to-applicant"
+      }
+     ]
+    }
+   ]
+  },
+  "side-6a620ad9dc": {
+   "title": "Audiology and Speech Language Pathology Program",
+   "groups": [
+    {
+     "title": "Audiology and Speech Language Pathology Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-audiology-and-speech-language-pathology"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-health-sciences/bs-aslp-accreditation"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-health-sciences/bs-aslp-program-learning-outcomes"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-health-sciences/bs-aslp-study-plan"
+      },
+      {
+       "label": "Curriculum",
+       "url": "/college-of-health-sciences/bs-aslp-Curriculum"
+      },
+      {
+       "label": "Graduation Criteria",
+       "url": "/college-of-health-sciences/bs-aslp-graduation-criteria"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-audiology-and-speech-language-pathology-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-health-sciences/bs-in-audiology-and-speech-language-pathology-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-health-sciences/bs-in-audiology-and-speech-language-pathology-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-health-sciences/bs-audiology-and-speech-language-pathology-guide-to-applicant"
+      }
+     ]
+    }
+   ]
+  },
+  "side-e14d7f765a": {
+   "title": "Medical Imaging Sciences Program",
+   "groups": [
+    {
+     "title": "Medical Imaging Sciences Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-medical-imaging-sciences"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-health-sciences/bs-mis-accreditation"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-health-sciences/bs-mis-program-learning-outcomes"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-health-sciences/bs-mis-study-plan"
+      },
+      {
+       "label": "Curriculum",
+       "url": "/college-of-health-sciences/bs-mis-Curriculum"
+      },
+      {
+       "label": "Graduation Criteria",
+       "url": "/college-of-health-sciences/bs-mis-graduation-criteria"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-medical-imaging-sciences-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-health-sciences/bs-in-medical-imaging-sciences-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-health-sciences/bs-in-medical-imaging-sciences-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-health-sciences/bs-medical-imaging-sciences-guide-to-applicant"
+      }
+     ]
+    }
+   ]
+  },
+  "side-539681f994": {
+   "title": "Optometry Program",
+   "groups": [
+    {
+     "title": "Optometry Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-optometry"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-health-sciences/bs-opt-accreditation"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-health-sciences/bs-opt-program-learning-outcomes"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-health-sciences/bs-opt-study-plan"
+      },
+      {
+       "label": "Curriculum",
+       "url": "/college-of-health-sciences/bs-opt-Curriculum"
+      },
+      {
+       "label": "Graduation Criteria",
+       "url": "/college-of-health-sciences/bs-opt-graduation-criteria"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-health-sciences/bachelor-of-science-in-optometry-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-health-sciences/bs-in-optometry-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-health-sciences/bs-in-optometry-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-health-sciences/bs-optometry-guide-to-applicant"
+      }
+     ]
+    }
+   ]
+  },
+  "side-8811b932f5": {
+   "title": "Doctor of Medicine 6 year Program",
+   "groups": [
+    {
+     "title": "Doctor of Medicine 6 year Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-medicine/doctor-of-medicine"
+      },
+      {
+       "label": "Program Accreditation & Aims",
+       "url": "/college-of-medicine/md-program"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-medicine/md-6-program-learning-outcomes"
+      },
+      {
+       "label": "Completion requirements",
+       "url": "/college-of-medicine/md-6-completion-requirements"
+      },
+      {
+       "label": "Course Catalogue",
+       "url": "/college-of-medicine/md-6-course-catalogue"
+      },
+      {
+       "label": "Program Description",
+       "url": "/college-of-medicine/md-6-program-description"
+      },
+      {
+       "label": "Program Structure",
+       "url": "/college-of-medicine/md-6-program-structure"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-medicine/md-study-plan"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-medicine/doctor-of-medicine-6-year-program-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-medicine/md6-important-dates"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-medicine/md6-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-medicine/md6-guide-to-applicant"
+      },
+      {
+       "label": "Multiple Mini Interviews (MMI)",
+       "url": "/college-of-medicine/md6-multiple-mini-interviews-mmi"
+      },
+      {
+       "label": "Placement Exam Topics",
+       "url": "/college-of-medicine/md6-placement-exam-interview"
+      },
+      {
+       "label": "Scholarships and Discounts",
+       "url": "/college-of-medicine/md6-scholarships-and-discounts"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/college-of-medicine/dmcg-frequently-asked-questions"
+      }
+     ]
+    }
+   ]
+  },
+  "side-16770fcebc": {
+   "title": "Bachelor of Biomedical Science Program",
+   "groups": [
+    {
+     "title": "Bachelor of Biomedical Science Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-medicine/bachelor-of-biomedical-science"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-medicine/bachelor-in-biomedical-sciences"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-medicine/bbms-program-learning-outcomes"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-medicine/biomedical-science-study-plan"
+      },
+      {
+       "label": "Curriculum and Delivery",
+       "url": "/college-of-medicine/bbms-curriculum-and-delivery"
+      },
+      {
+       "label": "Curriculum and Structure",
+       "url": "/college-of-medicine/bbms-curriculum-and-structure"
+      },
+      {
+       "label": "Career Outcomes",
+       "url": "/college-of-medicine/bbms-career-outcomes"
+      },
+      {
+       "label": "Career Pathways",
+       "url": "/college-of-medicine/bbms-career-pathways"
+      },
+      {
+       "label": "Program Strengths",
+       "url": "/college-of-medicine/bbms-program-strengths"
+      },
+      {
+       "label": "Completion Requirements",
+       "url": "/college-of-medicine/bbms-program-completion-requirements"
+      },
+      {
+       "label": "Research and Innovation",
+       "url": "/college-of-medicine/bbms-research-and-innovation"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-medicine/bachelor-of-biomedical-science-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-medicine/bbms-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-medicine/bbms-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-medicine/bbms-guide-to-applicant"
+      },
+      {
+       "label": "Placement Exam Topics",
+       "url": "/college-of-medicine/bbms-placement-exam-interview"
+      },
+      {
+       "label": "Scholarships and Discounts",
+       "url": "/college-of-medicine/bbms-scholarships-and-discounts"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/bbms-frequently-asked-questions"
+      }
+     ]
+    }
+   ]
+  },
+  "side-c40ac5b4bb": {
+   "title": "BPharm Program",
+   "groups": [
+    {
+     "title": "BPharm Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-pharmacy/bachelor-of-pharmacy"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-pharmacy/bpharm"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-pharmacy/bpharm-program-learning-outcomes"
+      },
+      {
+       "label": "Graduate Competencies",
+       "url": "/college-of-pharmacy/bpharm-graduate-competencies"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-pharmacy/bpharm-study-plan"
+      },
+      {
+       "label": "Course Description",
+       "url": "/college-of-pharmacy/bpharm-course-description"
+      },
+      {
+       "label": "Graduation Criteria",
+       "url": "/college-of-pharmacy/bpharm-graduation-criteria"
+      },
+      {
+       "label": "Adjunct Faculty",
+       "url": "/college-of-pharmacy/bpharm-adjunct-faculty"
+      },
+      {
+       "label": "Internship",
+       "url": "/bpharm-internship"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/college-of-pharmacy/bpharm-frequently-asked-questions"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-pharmacy/bachelor-of-pharmacy-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-pharmacy/bachelor-of-pharmacy-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-pharmacy/bachelor-of-pharmacy-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-pharmacy/bachelor-of-pharmacy-guide-to-applicant"
+      },
+      {
+       "label": "Placement Exam & Interview",
+       "url": "/college-of-pharmacy/bachelor-of-pharmacy-placement-exam-interview"
+      },
+      {
+       "label": "Scholarships and Discounts",
+       "url": "/college-of-pharmacy/bachelor-of-pharmacy-scholarships-and-discounts"
+      }
+     ]
+    }
+   ]
+  },
+  "side-33909fd00f": {
+   "title": "BSN Program",
+   "groups": [
+    {
+     "title": "BSN Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-nursing/bachelor-of-science-in-nursing"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-nursing/bachelor-of-science-in-nursing-accreditation"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-nursing/con-program-learning-outcomes"
+      },
+      {
+       "label": "Curriculum",
+       "url": "/college-of-nursing/con-bsn-curriculum"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-nursing/con-study-plan"
+      },
+      {
+       "label": "Completion requirements",
+       "url": "/college-of-nursing/con-completion-requirements"
+      },
+      {
+       "label": "Course Description",
+       "url": "/college-of-nursing/con-course-description"
+      },
+      {
+       "label": "Career Opportunities",
+       "url": "/college-of-nursing/con-career-opportunities"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-nursing/bachelor-of-science-in-nursing-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-nursing/bsn-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-nursing/bsn-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/bsn-guide-to-applicant"
+      },
+      {
+       "label": "Placement Exam & Interview",
+       "url": "/college-of-nursing/bsn-placement-exam-interview"
+      },
+      {
+       "label": "Scholarships and Discounts",
+       "url": "/college-of-nursing/bsn-scholarships-and-discounts"
+      }
+     ]
+    }
+   ]
+  },
+  "side-88e1265a78": {
+   "title": "Drug Discovery And Development Program",
+   "groups": [
+    {
+     "title": "Drug Discovery And Development Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-pharmacy/master-of-science-in-drug-discovery-and-development"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-pharmacy/msc-drug-discovery-and-development-accreditation"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-pharmacy/drug-discovery-development-study-plan"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-pharmacy/msc-drug-discovery-and-development-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-pharmacy/msc-drug-discovery-and-development-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-pharmacy/msc-drug-discovery-and-development-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-pharmacy/msc-drug-discovery-and-development-guide-to-applicant"
+      },
+      {
+       "label": "Scholarships and Discounts",
+       "url": "/college-of-pharmacy/msc-drug-discovery-and-development-scholarships-and-discounts"
+      }
+     ]
+    }
+   ]
+  },
+  "side-9ea5937679": {
+   "title": "MPharm Program",
+   "groups": [
+    {
+     "title": "MPharm Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-pharmacy/master-of-pharmacy"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-pharmacy/mpharm"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-pharmacy/mpharm-program-learning-outcomes"
+      },
+      {
+       "label": "Graduate Competencies",
+       "url": "/college-of-pharmacy/mpharm-graduate-competencies"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-pharmacy/mpharm-study-plan"
+      },
+      {
+       "label": "Course Description",
+       "url": "/college-of-pharmacy/mpharm-course-description"
+      },
+      {
+       "label": "Catalogue",
+       "url": "/college-of-pharmacy/mpharm-catalogue"
+      },
+      {
+       "label": "Graduation Criteria",
+       "url": "/college-of-pharmacy/mpharm-graduation-criteria"
+      },
+      {
+       "label": "Academic Faculty",
+       "url": "/college-of-pharmacy/mpharm-academic-faculty"
+      },
+      {
+       "label": "Adjunct Faculty",
+       "url": "/college-of-pharmacy/mpharm-adjunct-faculty"
+      },
+      {
+       "label": "Clerkship Rotations",
+       "url": "/college-of-pharmacy/mpharm-clerkship-rotations"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/college-of-pharmacy/mpharm-frequently-asked-questions"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-pharmacy/master-of-pharmacy-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-pharmacy/master-of-pharmacy-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-pharmacy/master-of-pharmacy-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-pharmacy/master-of-pharmacy-guide-to-applicant"
+      },
+      {
+       "label": "Scholarships and Discounts",
+       "url": "/college-of-pharmacy/master-of-pharmacy-scholarships-and-discounts"
+      }
+     ]
+    }
+   ]
+  },
+  "side-f835169bd0": {
+   "title": "PharmD Program",
+   "groups": [
+    {
+     "title": "PharmD Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy-accreditation"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-pharmacy/pharmd-program-learning-outcomes"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy-study-plan"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy-guide-to-applicant"
+      },
+      {
+       "label": "Placement Exam & Interview",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy-placement-exam-interview"
+      },
+      {
+       "label": "Scholarships and Discounts",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy-scholarships-and-discounts"
+      }
+     ]
+    }
+   ]
+  },
+  "side-b2ed45716d": {
+   "title": "MS Health Professions Education Program",
+   "groups": [
+    {
+     "title": "MS Health Professions Education Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-medicine/master-of-science-in-health-professions-education"
+      },
+      {
+       "label": "Program Aims & Accreditation",
+       "url": "/college-of-medicine/master-of-science-in-health-professions-education-aims"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-medicine/hpe-program-learning-outcomes"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-medicine/health-professions-education-study-plan"
+      },
+      {
+       "label": "Completion requirements",
+       "url": "/college-of-medicine/ms-completion-requirements"
+      },
+      {
+       "label": "Members of the MHPE Program",
+       "url": "/college-of-medicine/mhpe-program-members"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-medicine/master-of-science-in-health-professions-education-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-medicine/mshpe-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-medicine/mshpe-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-medicine/mshpe-guide-to-applicant"
+      },
+      {
+       "label": "Scholarships and Discounts",
+       "url": "/college-of-medicine/mshpe-scholarships-and-discounts"
+      },
+      {
+       "label": "Interview",
+       "url": "/college-of-medicine/mshpe-interview"
+      }
+     ]
+    }
+   ]
+  },
+  "side-1a04138dda": {
+   "title": "MSc Global & Digital Public Health Leadership Program",
+   "groups": [
+    {
+     "title": "MSc Global & Digital Public Health Leadership Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-medicine/master-of-global-and-digital-public-health-leadership"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-medicine/msc-gdphl"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-medicine/msc-gdphl-program-learning-outcomes"
+      },
+      {
+       "label": "Graduate Competencies",
+       "url": "/college-of-medicine/msc-gdphl-graduate-competencies"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-medicine/msc-gdphl-study-plan"
+      },
+      {
+       "label": "Course Description",
+       "url": "/college-of-medicine/msc-gdphl-course-descriptions"
+      },
+      {
+       "label": "Graduation Criteria",
+       "url": "/college-of-medicine/msc-gdphl-graduation-criteria"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-medicine/master-of-global-and-digital-public-health-leadership-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-medicine/msc-gdphl-important-dates"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-medicine/msc-gdphl-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-medicine/msc-gdphl-guide-to-applicant"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/college-of-medicine/msc-gdphl-frequently-asked-questions"
+      }
+     ]
+    }
+   ]
+  },
+  "side-0f8e4eafb6": {
+   "title": "PharmD (Post-Bachelor) Program",
+   "groups": [
+    {
+     "title": "PharmD (Post-Bachelor) Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy-post-bachelor"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-pharmacy/doctor-of-pharmacy-post-bachelor-accreditation"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-pharmacy/pharmd-post-bachelor-program-learning-outcomes"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-pharmacy/pharmd-post-bachelor-study-plan"
+      },
+      {
+       "label": "Course Description",
+       "url": "/college-of-pharmacy/pharmd-post-bachelor-course-description"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-pharmacy/pharmd-post-bachelor-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/pharmd-post-bachelor-important-date"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-pharmacy/pharmd-post-bachelor-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/pharmd-post-bachelor-guide-to-applicant"
+      }
+     ]
+    }
+   ]
+  },
+  "side-408bcac5c0": {
+   "title": "Critical Care Nursing",
+   "groups": [
+    {
+     "title": "Critical Care Nursing",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-nursing/master-of-science-in-critical-care-nursing"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-nursing/ms-cc-accreditation"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-nursing/ms-cc-program-learning-outcomes"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-nursing/ms-cc-study-plan"
+      },
+      {
+       "label": "Curriculum",
+       "url": "/college-of-nursing/ms-cc-curriculum"
+      },
+      {
+       "label": "Graduation Criteria",
+       "url": "/college-of-nursing/ms-cc-graduation-criteria"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-nursing/master-of-science-in-critical-care-nursing-admissions"
+      }
+     ]
+    }
+   ]
+  },
+  "side-aa8a2ca393": {
+   "title": "Geriatric Nursing",
+   "groups": [
+    {
+     "title": "Geriatric Nursing",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-nursing/master-of-science-in-geriatric-nursing"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-nursing/ms-gn-accreditation"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-nursing/ms-gn-program-learning-outcomes"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-nursing/ms-gn-study-plan"
+      },
+      {
+       "label": "Curriculum",
+       "url": "/college-of-nursing/ms-gn-curriculum"
+      },
+      {
+       "label": "Graduation Criteria",
+       "url": "/college-of-nursing/ms-gn-graduation-criteria"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-nursing/master-of-science-in-geriatric-nursing-admissions"
+      }
+     ]
+    }
+   ]
+  },
+  "side-bbabf3453f": {
+   "title": "Discover",
+   "groups": [
+    {
+     "title": "Discover",
+     "links": [
+      {
+       "label": "Why College of Medicine",
+       "url": "/college-of-medicine/about-dmcg"
+      },
+      {
+       "label": "Vision and Mission",
+       "url": "/dmcg-vision-mission"
+      },
+      {
+       "label": "Goals and Objectives",
+       "url": "/college-of-medicine/dmcg-goals-and-objectives"
+      },
+      {
+       "label": "Organization Chart",
+       "url": "/college-of-medicine/dmcg-organization-structure"
+      },
+      {
+       "label": "Dean's Message",
+       "url": "/college-of-medicine/message-from-dmcg-dean"
+      },
+      {
+       "label": "COM Leadership",
+       "url": "/college-of-medicine/dmcg-leadership"
+      }
+     ]
+    }
+   ]
+  },
+  "side-fc84a8925b": {
+   "title": "Doctor of Medicine 4 year Program",
+   "groups": [
+    {
+     "title": "Doctor of Medicine 4 year Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-medicine/doctor-of-medicine-4-years"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-medicine/com-md4-program"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-medicine/com-md4-program-learning-outcomes"
+      },
+      {
+       "label": "Completion requirements",
+       "url": "/college-of-medicine/com-md4-completion-requirements"
+      },
+      {
+       "label": "Course Catalogue",
+       "url": "/college-of-medicine/com-md4-course-catalogue"
+      },
+      {
+       "label": "Program Description",
+       "url": "/college-of-medicine/com-md4-program-description"
+      },
+      {
+       "label": "Program Structure",
+       "url": "/college-of-medicine/com-md4-program-structure"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-medicine/com-md4-study-plan"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-medicine/doctor-of-medicine-4-year-program-admission"
+      },
+      {
+       "label": "Important Dates",
+       "url": "/college-of-medicine/md4-important-dates"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-medicine/md4-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-medicine/md4-guide-to-applicant"
+      },
+      {
+       "label": "Multiple Mini Interviews (MMI)",
+       "url": "/college-of-medicine/md4-multiple-mini-interviews-mmi"
+      },
+      {
+       "label": "Placement Exam Topics",
+       "url": "/college-of-medicine/md4-placement-exam-interview"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/md4-frequently-asked-questions"
+      }
+     ]
+    }
+   ]
+  },
+  "side-8b09ff390a": {
+   "title": "PGDip Health Professions Education Program",
+   "groups": [
+    {
+     "title": "PGDip Health Professions Education Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-medicine/postgraduate-diploma-in-health-professions-education"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-medicine/pgdip-in-health-professions-education"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-medicine/pgdip-in-health-professions-education-study-plan"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-medicine/postgraduate-diploma-in-health-professions-education-admission"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/college-of-medicine/pgdhpe-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-medicine/pgdhpe-guide-to-applicant"
+      },
+      {
+       "label": "Scholarships and Discounts",
+       "url": "/college-of-medicine/pgdhpe-scholarships-and-discounts"
+      },
+      {
+       "label": "Interview",
+       "url": "/college-of-medicine/pgdhpe-interview"
+      }
+     ]
+    }
+   ]
+  },
+  "side-2a24de86cf": {
+   "title": "PG Dip in Global & Digital Public Health Leadership Program",
+   "groups": [
+    {
+     "title": "PG Dip in Global & Digital Public Health Leadership Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-medicine/pg-diploma-in-global-digital-public-health-leadership"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-medicine/pg-dip-gdphl"
+      },
+      {
+       "label": "Program Learning Outcomes",
+       "url": "/college-of-medicine/pg-dip-gdphl-program-learning-outcomes"
+      },
+      {
+       "label": "Graduate Competencies",
+       "url": "/college-of-medicine/pg-dip-gdphl-graduate-competencies"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-medicine/pg-dip-gdphl-study-plan"
+      },
+      {
+       "label": "Course Description",
+       "url": "/college-of-medicine/pg-dip-gdphl-course-description"
+      },
+      {
+       "label": "Graduation Criteria",
+       "url": "/college-of-medicine/pg-dip-gdphl-graduation-criteria"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Requirements",
+       "url": "/college-of-medicine/pg-diploma-in-global-digital-public-health-leadership-admission"
+      },
+      {
+       "label": "Required Documents",
+       "url": "/pg-dip-gdphl-required-documents"
+      },
+      {
+       "label": "Guide to Applicant",
+       "url": "/college-of-medicine/pg-dip-gdphl-guide-to-applicant"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/college-of-medicine/pg-dip-gdphl-frequently-asked-questions"
+      }
+     ]
+    }
+   ]
+  },
+  "side-372880baea": {
+   "title": "Admissions",
+   "groups": [
+    {
+     "title": "Admissions",
+     "links": [
+      {
+       "label": "Admission Criteria",
+       "url": "/college-of-medicine/college-of-medicine-admissions"
+      },
+      {
+       "label": "Tuition Fees",
+       "url": "/college-of-medicine/dmucom-tuition-fees"
+      },
+      {
+       "label": "Transfer from other Colleges",
+       "url": "/college-of-medicine/dmcg-transfer-from-other-colleges"
+      }
+     ]
+    }
+   ]
+  },
+  "side-74d03e9e27": {
+   "title": "Research",
+   "groups": [
+    {
+     "title": "Research",
+     "links": [
+      {
+       "label": "Research Publications",
+       "url": "/college-of-medicine/com-research-publications"
+      },
+      {
+       "label": "Research Policy",
+       "url": "/college-of-medicine/com-research-policy"
+      },
+      {
+       "label": "Dissertations",
+       "url": "/college-of-medicine/com-research-dissertations"
+      },
+      {
+       "label": "Laboratories",
+       "url": "https://research.dmu.ae/home/laboratories/"
+      },
+      {
+       "label": "Research Support",
+       "url": "https://research.dmu.ae/home/contact/"
+      }
+     ]
+    }
+   ]
+  },
+  "side-f54a885917": {
+   "title": "Discover",
+   "groups": [
+    {
+     "title": "Discover",
+     "links": [
+      {
+       "label": "Why College of Pharmacy",
+       "url": "/college-of-pharmacy/about-dpcg"
+      },
+      {
+       "label": "Vision and Mission",
+       "url": "/college-of-pharmacy/dpcg-vision-mission-2"
+      },
+      {
+       "label": "Goals and Objectives",
+       "url": "/college-of-pharmacy/dpcg-goals-and-objectives"
+      },
+      {
+       "label": "Organization Chart",
+       "url": "/college-of-pharmacy/dpcg-organization-structure"
+      },
+      {
+       "label": "Dean's Message",
+       "url": "/college-of-pharmacy/message-from-dpcg-dean"
+      },
+      {
+       "label": "Advisory Board",
+       "url": "/college-of-pharmacy/cop-advisory-board"
+      }
+     ]
+    }
+   ]
+  },
+  "side-ff9f229b95": {
+   "title": "PGDip Drug Discovery And Development Program",
+   "groups": [
+    {
+     "title": "PGDip Drug Discovery And Development Program",
+     "links": [
+      {
+       "label": "Program Overview",
+       "url": "/college-of-pharmacy/postgraduate-diploma-in-drug-discovery-and-development"
+      },
+      {
+       "label": "Accreditation",
+       "url": "/college-of-pharmacy/pg-diploma-in-drug-discovery-and-development-accreditation"
+      },
+      {
+       "label": "Study Plan",
+       "url": "/college-of-pharmacy/pgdip-in-drug-discovery-dev-study-plan"
+      }
+     ]
+    },
+    {
+     "title": "Admission",
+     "links": [
+      {
+       "label": "Admission Criteria",
+       "url": "/college-of-pharmacy/postgraduate-diploma-in-drug-discovery-and-development-admission"
+      }
+     ]
+    }
+   ]
+  },
+  "side-c84e80f595": {
+   "title": "Admissions",
+   "groups": [
+    {
+     "title": "Admissions",
+     "links": [
+      {
+       "label": "Admission Criteria",
+       "url": "/college-of-pharmacy/cop-admission-criteria"
+      },
+      {
+       "label": "Tuition Fees",
+       "url": "/college-of-pharmacy/dpcg-tuition-fees"
+      },
+      {
+       "label": "Transfer from other Colleges",
+       "url": "/college-of-pharmacy/dpcg-transfer-from-other-colleges"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/college-of-pharmacy/dpcg-frequently-asked-questions"
+      }
+     ]
+    }
+   ]
+  },
+  "side-2c22628889": {
+   "title": "Research",
+   "groups": [
+    {
+     "title": "Research",
+     "links": [
+      {
+       "label": "Research Publications",
+       "url": "/college-of-pharmacy/cop-research-publications"
+      },
+      {
+       "label": "Research Policies",
+       "url": "/college-of-pharmacy/cop-research-policies"
+      },
+      {
+       "label": "Laboratories",
+       "url": "https://research.dmu.ae/home/laboratories/"
+      },
+      {
+       "label": "Research Support",
+       "url": "https://research.dmu.ae/home/contact/"
+      }
+     ]
+    }
+   ]
+  },
+  "side-8f4173fe24": {
+   "title": "Discover",
+   "groups": [
+    {
+     "title": "Discover",
+     "links": [
+      {
+       "label": "Why College of Nursing",
+       "url": "/college-of-nursing/about-con"
+      },
+      {
+       "label": "Vision and Mission",
+       "url": "/college-of-nursing/con-vision-mission"
+      },
+      {
+       "label": "Aims and Objectives",
+       "url": "/college-of-nursing/con-goals-and-objectives"
+      },
+      {
+       "label": "Organization Chart",
+       "url": "/college-of-nursing/con-organization-structure"
+      },
+      {
+       "label": "Dean's Message",
+       "url": "/college-of-nursing/message-from-con-dean"
+      },
+      {
+       "label": "Student Success Center",
+       "url": "/college-of-nursing/con-student-success-center"
+      }
+     ]
+    }
+   ]
+  },
+  "side-d18c25c0af": {
+   "title": "Admissions",
+   "groups": [
+    {
+     "title": "Admissions",
+     "links": [
+      {
+       "label": "Admission Criteria",
+       "url": "/college-of-nursing/college-of-nursing-admissions"
+      },
+      {
+       "label": "Tuition Fees",
+       "url": "/college-of-nursing/con-tuition-fees"
+      },
+      {
+       "label": "Transfer from other Colleges",
+       "url": "/college-of-nursing/con-transfer-from-other-colleges"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/college-of-nursing/con-frequently-asked-questions"
+      }
+     ]
+    }
+   ]
+  },
+  "side-2334e3b7c7": {
+   "title": "Nursing Simulation Center",
+   "groups": [
+    {
+     "title": "Nursing Simulation Center",
+     "links": [
+      {
+       "label": "Overview",
+       "url": "/college-of-nursing/nursing-simulation-center"
+      },
+      {
+       "label": "What is Simulation?",
+       "url": "/college-of-nursing/about-nursing-simulation-center"
+      },
+      {
+       "label": "Mission & Vision",
+       "url": "/college-of-nursing/con-simulation-center-vision-mission"
+      },
+      {
+       "label": "Simulation-Based Learning Outcomes",
+       "url": "/college-of-nursing/con-simulation-based-learning-outcomes"
+      },
+      {
+       "label": "Simulation Technology",
+       "url": "/college-of-nursing/con-simulation-technology"
+      },
+      {
+       "label": "Frequently Asked Questions",
+       "url": "/college-of-nursing/con-simulation-center-frequently-asked-questions"
+      }
+     ]
+    },
+    {
+     "title": "Simulation Laboratories",
+     "links": [
+      {
+       "label": "Multitask Room",
+       "url": "/college-of-nursing/con-simulation-center-multitask-room"
+      },
+      {
+       "label": "Immersive Interactive Room",
+       "url": "/college-of-nursing/con-simulation-center-immersive-interactive-room"
+      },
+      {
+       "label": "Health Assessment Laboratory",
+       "url": "/college-of-nursing/con-nursing-simulation-center-health-assessment-laboratory"
+      },
+      {
+       "label": "Adult Health Laboratory",
+       "url": "/college-of-nursing/con-nursing-simulation-center-adult-health-laboratory"
+      },
+      {
+       "label": "Fundamental Nursing Skills Laboratory",
+       "url": "/college-of-nursing/con-nursing-simulation-center-fundamental-nursing-skills-laboratory"
+      },
+      {
+       "label": "Geriatric Laboratory",
+       "url": "/college-of-nursing/con-nursing-simulation-center-laboratories-geriatric-laboratory"
+      },
+      {
+       "label": "Debriefing Room",
+       "url": "/college-of-nursing/con-nursing-simulation-center-laboratories-debriefing-room"
+      }
+     ]
+    }
+   ]
+  },
+  "side-b192a5d159": {
+   "title": "Discover",
+   "groups": [
+    {
+     "title": "Discover",
+     "links": [
+      {
+       "label": "Why College of Health Sciences",
+       "url": "/college-of-health-sciences/about-cohs"
+      },
+      {
+       "label": "Dean's Message",
+       "url": "/college-of-health-sciences/message-from-cohs-dean"
+      },
+      {
+       "label": "Student Success Center",
+       "url": "/college-of-health-sciences/cohs-student-success-center"
+      }
+     ]
+    }
+   ]
+  },
+  "side-8f1a8d2bd1": {
+   "title": "Admissions",
+   "groups": [
+    {
+     "title": "Admissions",
+     "links": [
+      {
+       "label": "Admission Criteria",
+       "url": "/college-of-health-sciences/cohs-admission-criteria"
+      },
+      {
+       "label": "Tuition Fees",
+       "url": "/college-of-health-sciences/cohs-tuition-fees"
+      }
+     ]
+    }
+   ]
+  },
+  "side-38f94d3fdb": {
+   "title": "Fees and Scholarships",
+   "groups": [
+    {
+     "title": "Fees and Scholarships",
+     "links": [
+      {
+       "label": "Tuition Fees",
+       "url": "/admission-tuition-fees"
+      },
+      {
+       "label": "Transportation",
+       "url": "/transportation-2"
+      },
+      {
+       "label": "Payment Method",
+       "url": "/payment-method"
+      },
+      {
+       "label": "Visa & Insurance",
+       "url": "/visa-insurance"
+      }
+     ]
+    },
+    {
+     "title": "Facilities",
+     "links": [
+      {
+       "label": "Academic Advising",
+       "url": "/academic-advising"
+      },
+      {
+       "label": "Hostel",
+       "url": "/hostel-facilities"
+      },
+      {
+       "label": "Facilities and Services",
+       "url": "/facilities-services"
+      }
+     ]
+    }
+   ]
+  },
+  "side-74f03bfcca": {
+   "title": "Learning Resource Centre",
+   "groups": [
+    {
+     "title": "Learning Resource Centre",
+     "links": [
+      {
+       "label": "Learning Resource Centre",
+       "url": "/learning-resource-centre"
+      },
+      {
+       "label": "LRC Services",
+       "url": "/dmu-lrc-services"
+      },
+      {
+       "label": "LRC Facilities",
+       "url": "/dmu-lrc-facilities"
+      },
+      {
+       "label": "Useful Links",
+       "url": "/library-useful-links"
+      }
+     ]
+    }
+   ]
+  },
+  "side-557f58ed1c": {
+   "title": "Student Affairs",
+   "groups": [
+    {
+     "title": "Student Affairs",
+     "links": [
+      {
+       "label": "Student Wellbeing Center",
+       "url": "/wellbeing-center"
+      },
+      {
+       "label": "Alumni Services",
+       "url": "http://alumni.dmu.ae/"
+      },
+      {
+       "label": "Career Guidance",
+       "url": "/career-guidance"
+      },
+      {
+       "label": "Students of Determination",
+       "url": "/students-of-determination"
+      },
+      {
+       "label": "Counseling",
+       "url": "/mentorship-counseling-and-peer-learning"
+      }
+     ]
+    }
+   ]
+  },
+  "side-bee8ec32d9": {
+   "title": "Wellbeing Center",
+   "groups": [
+    {
+     "title": "Wellbeing Center",
+     "links": [
+      {
+       "label": "Student Wellbeing Center",
+       "url": "/wellbeing-center"
+      },
+      {
+       "label": "Psychotherapy & Counselling",
+       "url": "/psychotherapy-counselling"
+      },
+      {
+       "label": "Let’s Talk",
+       "url": "/lets-talk"
+      },
+      {
+       "label": "Self-Help & Digital Resources",
+       "url": "/self-help-digital-resources"
+      },
+      {
+       "label": "Workshops & Prevention Programs",
+       "url": "/workshops-prevention-programs"
+      },
+      {
+       "label": "Back to Student Affairs",
+       "url": "/student-affairs"
+      }
+     ]
+    }
+   ]
+  },
+  "college-139bc29d74": {
+   "title": "",
+   "url": "/",
+   "groups": [
+    {
+     "title": "DMU",
+     "links": []
+    },
+    {
+     "title": "DMU Sustainability",
+     "links": [
+      {
+       "label": "Vision & Mission",
+       "url": null
+      },
+      {
+       "label": "Goals",
+       "url": "/sustainability-goals"
+      },
+      {
+       "label": "Meet the Team",
+       "url": "/sustainability-team"
+      }
+     ]
+    },
+    {
+     "title": "Our Initiatives",
+     "links": []
+    },
+    {
+     "title": "Sustainable Projects",
+     "links": []
+    },
+    {
+     "title": "Media Hub",
+     "links": [
+      {
+       "label": "News & Events",
+       "url": "/sustainability-news-events"
+      },
+      {
+       "label": "Gallery",
+       "url": null
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,67 @@
+[
+ {
+  "slug": "alumnisl",
+  "name": "Alumni",
+  "count": 0
+ },
+ {
+  "slug": "medicine",
+  "name": "College of Medicine",
+  "count": 117
+ },
+ {
+  "slug": "medicine-latest",
+  "name": "College of Medicine News",
+  "count": 3
+ },
+ {
+  "slug": "nursing",
+  "name": "College of Nursing",
+  "count": 27
+ },
+ {
+  "slug": "nursing-latest",
+  "name": "College of Nursing News",
+  "count": 0
+ },
+ {
+  "slug": "pharmacy",
+  "name": "College of Pharmacy",
+  "count": 210
+ },
+ {
+  "slug": "pharmacy-latest",
+  "name": "College of Pharmacy News",
+  "count": 6
+ },
+ {
+  "slug": "community-engagement",
+  "name": "Community Engagement",
+  "count": 2
+ },
+ {
+  "slug": "community-engagements",
+  "name": "Community Engagements",
+  "count": 27
+ },
+ {
+  "slug": "dmu",
+  "name": "DMU",
+  "count": 97
+ },
+ {
+  "slug": "dsa",
+  "name": "DSA",
+  "count": 66
+ },
+ {
+  "slug": "qaie",
+  "name": "QAIE",
+  "count": 11
+ },
+ {
+  "slug": "sustainability",
+  "name": "Sustainability",
+  "count": 3
+ }
+]

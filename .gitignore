@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# downloaded media (uploaded to Supabase instead)
+/migration/media
+
+# local tools
+/.claude/settings.local.json

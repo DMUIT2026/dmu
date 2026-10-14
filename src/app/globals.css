@@ -44,7 +44,8 @@ body {
 .eyebrow { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: var(--color-bronze-600); }
 .gold-rule { width: 3rem; height: 2px; background: linear-gradient(90deg, var(--color-gold-500), transparent); }
 
-.btn { display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; padding: .8rem 1.4rem; font-weight: 600; font-size: .9rem; transition: all .2s ease; }
+@layer components {
+.btn { white-space: nowrap; display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; padding: .8rem 1.4rem; font-weight: 600; font-size: .9rem; transition: all .2s ease; }
 .btn-gold { background: var(--color-gold-500); color: var(--color-espresso); }
 .btn-gold:hover { background: var(--color-gold-400); transform: translateY(-1px); }
 .btn-dark { background: var(--color-espresso); color: #fff; }
@@ -53,6 +54,7 @@ body {
 .btn-ghost:hover { background: rgb(255 255 255 / .12); }
 .btn-outline { border: 1px solid var(--color-line); color: var(--color-ink); background: #fff; }
 .btn-outline:hover { border-color: var(--color-gold-500); }
+}
 
 /* ---------- Rich content (copied pages, news, profiles) ---------- */
 .prose-dmu { font-size: 1.0625rem; line-height: 1.75; color: #2c261e; }
@@ -114,7 +116,7 @@ body {
 .prose-dmu .card span { display: block; padding: 0 1.1rem 1.1rem; font-size: .875rem; line-height: 1.5; color: var(--color-stone-500); }
 
 /* ---------- motion ---------- */
-@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
 .rise { animation: rise .8s cubic-bezier(.2, .7, .2, 1) both; }
 .rise-2 { animation-delay: .12s; } .rise-3 { animation-delay: .24s; } .rise-4 { animation-delay: .36s; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }

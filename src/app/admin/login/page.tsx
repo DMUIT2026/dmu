@@ -29,7 +29,7 @@ function LoginForm() {
   }
   const input = 'w-full rounded-xl border border-line bg-white px-4 py-3 outline-none focus:border-gold-500';
   return (
-    <form onSubmit={submit} className="w-full max-w-sm rounded-[1.5rem] border border-line bg-white p-8 shadow-[var(--shadow-lift)]">
+    <form method="post" action="/admin/login" onSubmit={submit} className="w-full max-w-sm rounded-[1.5rem] border border-line bg-white p-8 shadow-[var(--shadow-lift)]">
       <Image src="/brand/logo.png" alt="Dubai Medical University" width={200} height={65} className="h-12 w-auto" />
       <h1 className="font-display mt-8 text-3xl">{mode === 'password' ? 'Website admin' : 'Reset password'}</h1>
       <p className="mt-2 text-sm text-stone-500">{mode === 'password' ? 'Sign in to edit and publish website content.' : 'We will email you a secure link.'}</p>

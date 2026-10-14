@@ -106,16 +106,16 @@ export default function HeaderClient({ items, overlay, phone, phoneLink, portals
                 <p className="font-display mt-3 text-3xl leading-tight">{items[open].label}</p>
                 <div className="gold-rule mt-5" />
               </div>
-              <div className="grid grid-cols-3 gap-x-8 gap-y-1">
+              <div className="columns-3 gap-x-8">
                 {items[open].children!.map(c => c.children?.length ? (
-                  <div key={c.label} className="row-span-3 py-2">
+                  <div key={c.label} className="break-inside-avoid py-2">
                     <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-bronze-600">{c.label}</p>
                     <ul className="space-y-1">
                       {c.children.map(g => <li key={g.label}><NavLink item={g} className="block rounded-lg px-2 py-1.5 -mx-2 text-[.95rem] text-ink/80 hover:bg-sand-100 hover:text-ink" /></li>)}
                     </ul>
                   </div>
                 ) : (
-                  <NavLink key={c.label} item={c} className="block rounded-lg px-3 py-2.5 -mx-3 text-[.98rem] text-ink hover:bg-sand-100" />
+                  <NavLink key={c.label} item={c} className="block break-inside-avoid rounded-lg px-3 py-2.5 -mx-3 text-[.98rem] text-ink hover:bg-sand-100" />
                 ))}
               </div>
             </div>

@@ -14,7 +14,7 @@ export default async function Dashboard() {
   const [pages, drafts, posts, people, unread, recentPages, recentPosts] = await Promise.all([
     count('pages'), count('pages', ['status', 'draft']), count('posts'), count('people'), count('messages', ['read', false]),
     supabase.from('pages').select('id,title,path,updated_at,status').order('updated_at', { ascending: false }).limit(6),
-    supabase.from('posts').select('id,title,published_at,status').order('updated_at', { ascending: false }).limit(6),
+    supabase.from('posts').select('id,title,published_at,status').order('published_at', { ascending: false, nullsFirst: true }).limit(6),
   ]);
   const stat = (label: string, n: number, href: string, Icon: typeof FileText, note?: string) => (
     <Link href={href} className="rounded-2xl border border-line bg-white p-5 transition hover:border-gold-500">

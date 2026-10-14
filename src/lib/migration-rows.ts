@@ -19,6 +19,20 @@ const CATEGORY_ORDER: Record<string, [string, number]> = {
   dsa: ['Student Affairs', 5], 'community-engagements': ['Community Engagement', 6], qaie: ['QAIE', 7], sustainability: ['Sustainability', 8],
 };
 
+const UP = 'https://dmu.ae/home/wp-content/uploads/';
+const DEFAULT_HERO: Record<string, string> = {
+  'college-of-medicine': UP + '2026/08/dmucom26_header1.jpg',
+  'college-of-pharmacy': UP + '2026/08/pharmacy_header26_1.jpg',
+  'college-of-nursing': UP + '2026/07/con_header30.jpg',
+  'college-of-health-sciences': UP + '2026/09/cohs_dmheader_59.jpg',
+  '': UP + '2026/08/dmu_header99.jpg',
+};
+/** The old site sometimes used a plain pattern, a logo or nothing as the banner; use a real campus photo instead. */
+export function heroFor(path: string, img?: string | null) {
+  const bad = !img || !/\.(jpe?g|webp)$/i.test(img) || /shade|blank_header|inner-page-shape/i.test(img);
+  return bad ? DEFAULT_HERO[path.split('/')[0]] ?? DEFAULT_HERO[''] : img!;
+}
+
 export interface Rows {
   pages: Page[]; posts: Post[]; people: Person[]; menus: Menu[]; settings: Record<string, unknown>;
   programs: Program[]; categories: Category[]; redirects: Record<string, string>;
@@ -46,7 +60,7 @@ export function buildRows(): Rows {
       if (m && [norm(title), norm(p.title)].includes(norm(m[1]))) content = content.slice(m[0].length); else break;
     }
     return {
-      path: p.path, title, subtitle: null, hero_image: p.hero_image ?? null, template, content, meta: p.meta ?? {},
+      path: p.path, title, subtitle: null, hero_image: heroFor(p.path, p.hero_image), template, content, meta: p.meta ?? {},
       section: COLLEGES[seg] ? seg : null, seo_title: p.seo_title ?? null, seo_description: p.seo_description ?? null,
       status: p.status ?? 'published', sort_order: i,
       original_url: p.original_url,
@@ -105,7 +119,7 @@ export function buildRows(): Rows {
       eyebrow: 'Dubai Medical University',
       title: 'Empower the next generation of health care leaders.',
       text: 'Medicine, pharmacy, nursing and health sciences — taught on one campus in Dubai, with nearly four decades of heritage.',
-      slides: ['2026/08/dmu_header99.jpg', '2026/08/header_studets.jpg', '2026/08/dmucom26_header5.jpg', '2026/08/dmucom26_header1.jpg']
+      slides: ['2026/08/header_studets.jpg', '2026/08/dmucom26_header5.jpg', '2026/08/dmu_header99.jpg']
         .map(f => ({ image: 'https://dmu.ae/home/wp-content/uploads/' + f })),
     },
     home_colleges: s.home_colleges,

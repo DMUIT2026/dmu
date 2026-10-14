@@ -30,6 +30,7 @@ export interface PageMeta {
   sidenav?: string;
   collegenav?: string;
   categories?: string[];
+  scopus_author_id?: string;
   [k: string]: unknown;
 }
 
@@ -83,6 +84,7 @@ export interface Person {
   title_ar?: string | null;
   department_ar?: string | null;
   bio_ar?: string | null;
+  scopus_author_id?: string | null;
 }
 
 export interface Program {

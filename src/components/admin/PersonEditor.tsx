@@ -43,6 +43,7 @@ export default function PersonEditor({ initial }: { initial: Person }) {
                 <Field label="College"><select value={p.college ?? ''} onChange={e => set('college', e.target.value || null)} className={inputCls}><option value="">—</option>{COLLEGES.map(c => <option key={c}>{c}</option>)}</select></Field>
                 <Field label="Email"><input value={p.email ?? ''} onChange={e => set('email', e.target.value || null)} className={inputCls} /></Field>
                 <Field label="Phone"><input value={p.phone ?? ''} onChange={e => set('phone', e.target.value || null)} className={inputCls} /></Field>
+                <Field label="Scopus Author ID" hint="The number at the end of the person's Scopus profile link (…authorId=). Shows their live publications, citations and h-index."><input value={p.scopus_author_id ?? ''} onChange={e => set('scopus_author_id', e.target.value.replace(/\D/g, '') || null)} inputMode="numeric" className={inputCls} /></Field>
               </div></Card>
               <div><p className="mb-2 text-sm font-medium">Profile (biography, education, research, publications…)</p><RichEditor key={'en' + edKey} value={p.bio} onChange={v => set('bio', v)} /></div>
             </>

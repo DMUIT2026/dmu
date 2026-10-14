@@ -10,6 +10,8 @@ import NewsList from '@/components/site/NewsList';
 import Directory from '@/components/site/Directory';
 import ContactForm from '@/components/site/ContactForm';
 import ScopusPublications from '@/components/site/ScopusPublications';
+import ScopusAuthorPanel from '@/components/site/ScopusAuthorPanel';
+import { Suspense } from 'react';
 import FilterableCards from '@/components/site/FilterableCards';
 import { prepareHtml } from '@/components/site/RichText';
 import { getAllPagePaths, getDirectory, getMenu, getPage, getSettings } from '@/lib/content';
@@ -107,6 +109,8 @@ export default async function CmsPage({ params, searchParams }: Props) {
       </div>
     );
   }
+
+  if (page.meta?.scopus_author_id) body = <>{body}<Suspense fallback={null}><ScopusAuthorPanel authorId={page.meta.scopus_author_id} locale={locale} /></Suspense></>;
 
   const wide = page.meta?.widget === 'scopus' || page.meta?.widget === 'card-filter' || page.template === 'news' || page.template === 'directory' || page.template === 'contact' || /class="cards"/.test(content);
   return (

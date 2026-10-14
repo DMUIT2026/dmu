@@ -127,6 +127,9 @@ export default function PageEditor({ initial, menus, categories }: { initial: Pa
                   <option value="">None</option>{menus.filter(m => m.kind === 'side').map(m => <option key={m.key} value={m.key}>{m.title}</option>)}
                 </select>
               </Field>
+              <Field label="Scopus Author ID (research profiles)" hint="Adds a live research box (publications, citations, h-index) under the page.">
+                <input value={p.meta.scopus_author_id ?? ''} onChange={e => setMeta('scopus_author_id', e.target.value.replace(/\D/g, '') || undefined)} inputMode="numeric" className={inputCls} />
+              </Field>
             </div>
           </Card>
           <Card title="Search engines (SEO)">

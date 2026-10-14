@@ -3,8 +3,8 @@ import { useCallback, useEffect, useState } from 'react';
 import { ExternalLink, Loader2 } from 'lucide-react';
 import type { Locale } from '@/lib/i18n';
 
-// Live list of DMU publications from Scopus, through the DMU research office's existing data service.
-const PROXY = 'https://research.dmu.ae/home/dmuhon/resket/centeral-chimica-proxy.php';
+// Live list of DMU publications from Scopus (through the website's own cached Scopus connection).
+const FEED = '/api/scopus/publications';
 const COLLEGES: [string, string, string][] = [
   ['Dubai Medical University', 'All of DMU', 'جامعة دبي الطبية'],
   ['Dubai Medical College', 'College of Medicine', 'كلية الطب'],
@@ -30,7 +30,7 @@ export default function ScopusPublications({ locale, initialCollege }: { locale:
   const load = useCallback(async (start: number) => {
     setBusy(true); setError(false);
     try {
-      const r = await fetch(`${PROXY}?college=${encodeURIComponent(college)}&year=${encodeURIComponent(year)}&start=${start}`);
+      const r = await fetch(`${FEED}?college=${encodeURIComponent(college)}&year=${encodeURIComponent(year)}&start=${start}`);
       const d = await r.json();
       const sr = d['search-results'] ?? {};
       const entries: Entry[] = (sr.entry ?? []).filter((e: Entry & { error?: string }) => !e.error);

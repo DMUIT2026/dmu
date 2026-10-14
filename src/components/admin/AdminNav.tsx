@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { CalendarDays, ExternalLink, FileText, Home, Image as ImageIcon, Languages, LayoutDashboard, ListTree, LogOut, Mail, Menu, Newspaper, GraduationCap, UserCog, Users, X } from 'lucide-react';
+import { BookOpenCheck, CalendarDays, ExternalLink, FileText, Home, Image as ImageIcon, Languages, LayoutDashboard, ListTree, LogOut, Mail, Menu, Newspaper, GraduationCap, UserCog, Users, X } from 'lucide-react';
 import { signOut } from '@/app/admin/actions';
 
 const items = [
@@ -18,6 +18,7 @@ const items = [
   { href: '/admin/media', label: 'Images & files', icon: ImageIcon },
   { href: '/admin/messages', label: 'Messages', icon: Mail },
   { href: '/admin/translation', label: 'Arabic translation', icon: Languages },
+  { href: '/admin/research', label: 'Research (Scopus)', icon: BookOpenCheck },
   { href: '/admin/users', label: 'Admin users', icon: UserCog },
 ];
 

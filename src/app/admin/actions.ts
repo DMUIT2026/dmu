@@ -1,12 +1,13 @@
 'use server';
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { requireAdmin } from '@/lib/admin-auth';
 import { adminClient } from '@/lib/supabase/admin';
 import { serverClient } from '@/lib/supabase/server';
+import { DEFAULT_AFFILIATIONS, testScopusKey } from '@/lib/scopus';
 import { autoTranslate, translateFields, translatorConfig, DEFAULT_MODEL } from '@/lib/translate';
 
-type Result = { ok: boolean; error?: string; id?: string; translated?: number; warning?: string; row?: Record<string, unknown> };
+type Result = { ok: boolean; error?: string; id?: string; translated?: number; warning?: string; row?: Record<string, unknown>; found?: number };
 const refresh = () => revalidatePath('/', 'layout');
 const clean = <T extends Record<string, unknown>>(o: T) =>
   Object.fromEntries(Object.entries(o).filter(([k]) => !['created_at', 'updated_at'].includes(k))) as T;
@@ -210,4 +211,27 @@ export async function saveTranslationSettings(_: unknown, form: FormData): Promi
   if (error) return { ok: false, error: error.message };
   revalidatePath('/admin/translation');
   return { ok: true };
+}
+
+// ---------- research (Scopus) ----------
+export async function saveScopusSettings(_: unknown, form: FormData): Promise<Result> {
+  const { supabase } = await requireAdmin();
+  const { data } = await supabase.from('private_settings').select('key,value').in('key', ['scopus_api_key', 'scopus_insttoken']);
+  const saved = Object.fromEntries((data ?? []).map(r => [r.key, String(r.value ?? '')]));
+  const remove = form.get('remove') === '1';
+  const apiKey = remove ? '' : String(form.get('api_key') ?? '').trim() || saved.scopus_api_key || '';
+  const instToken = remove ? '' : String(form.get('insttoken') ?? '').trim() || saved.scopus_insttoken || '';
+  const affiliations = String(form.get('affiliations') ?? '').replace(/[^\d,]/g, '') || DEFAULT_AFFILIATIONS;
+  let found = 0;
+  if (apiKey) {
+    try { found = await testScopusKey({ apiKey, instToken, affiliations }); }
+    catch (e) { return { ok: false, error: (e as Error).message + ' Please check the key.' }; }
+  }
+  const { error } = await supabase.from('private_settings').upsert([
+    { key: 'scopus_api_key', value: apiKey }, { key: 'scopus_insttoken', value: instToken }, { key: 'scopus_affiliations', value: affiliations },
+  ]);
+  if (error) return { ok: false, error: error.message };
+  revalidateTag('scopus');
+  refresh(); revalidatePath('/admin/research');
+  return { ok: true, found };
 }

@@ -99,6 +99,18 @@ export async function authorProfile(id: string | null | undefined): Promise<Auth
         break;
       } catch { /* try a simpler view */ }
     }
+    // Keys without author-profile access: work out citations and h-index from the researcher's papers.
+    if (citations == null && documents) {
+      const counts: number[] = [];
+      for (let start = 0; start < Math.min(documents, 400); start += 25) {
+        const page = await elsevier('/content/search/scopus', { query: `AU-ID(${id})`, sort: '-citedby-count', field: 'citedby-count', count: '25', start: String(start) }, cfg);
+        const entries = (page?.['search-results']?.entry ?? []).filter((e: Record<string, string>) => !e.error);
+        counts.push(...entries.map((e: Record<string, string>) => Number(e['citedby-count'] ?? 0)));
+        if (entries.length < 25 || Number(entries.at(-1)?.['citedby-count'] ?? 0) === 0) break; // the rest are uncited
+      }
+      citations = counts.reduce((a, b) => a + b, 0);
+      hIndex = counts.filter((c, i) => c >= i + 1).length;
+    }
     return { id, documents, citations, hIndex, recent };
   } catch {
     return null;

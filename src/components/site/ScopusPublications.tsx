@@ -17,9 +17,9 @@ const T = {
   ar: { college: 'الكلية', year: 'السنة', all: 'جميع السنوات', results: 'منشورًا', more: 'تحميل المزيد', loading: 'جارٍ تحميل المنشورات…', error: 'تعذّر تحميل المنشورات حاليًا. يُرجى المحاولة لاحقًا.', cited: 'الاستشهادات', source: 'المصدر: Scopus' },
 };
 
-export default function ScopusPublications({ locale }: { locale: Locale }) {
+export default function ScopusPublications({ locale, initialCollege }: { locale: Locale; initialCollege?: string }) {
   const t = T[locale];
-  const [college, setCollege] = useState(COLLEGES[0][0]);
+  const [college, setCollege] = useState(initialCollege ?? COLLEGES[0][0]);
   const [year, setYear] = useState('');
   const [items, setItems] = useState<Entry[]>([]);
   const [total, setTotal] = useState(0);

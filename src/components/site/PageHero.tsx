@@ -33,8 +33,8 @@ export default function PageHero({ locale = 'en', title, image, crumbs = [], eye
           {children && <div className="rise rise-3 mt-8">{children}</div>}
         </div>
         {image && (
-          <div className="rise rise-3 relative aspect-[16/9] overflow-hidden rounded-[1.5rem] shadow-[0_30px_60px_-20px_rgb(0_0_0/0.6)] ring-1 ring-white/10">
-            <Image src={image} alt="" fill priority sizes="(min-width:1024px) 600px, 100vw" quality={90} className="object-cover" />
+          <div className="rise rise-3 relative aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-bronze-700/60 to-espresso shadow-[0_30px_60px_-20px_rgb(0_0_0/0.6)] ring-1 ring-white/10">
+            <Image src={image} alt="" fill priority sizes="(min-width:1024px) 640px, 100vw" quality={80} className="object-cover" />
           </div>
         )}
       </div>

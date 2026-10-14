@@ -26,7 +26,10 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'dpc.edu' },
       { protocol: 'https', hostname: 'dmcg.edu' },
     ],
-    formats: ['image/avif', 'image/webp'],
+    // WebP is quick to produce; converted copies are kept for a year
+    formats: ['image/webp'],
+    minimumCacheTTL: 31536000,
+    deviceSizes: [640, 828, 1080, 1280, 1600, 1920],
   },
   async redirects() {
     return [

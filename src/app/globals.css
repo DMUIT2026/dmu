@@ -76,7 +76,8 @@ body {
 .prose-dmu ol { list-style: decimal; }
 .prose-dmu ol > li::marker { color: var(--color-bronze-600); font-weight: 600; }
 .prose-dmu li + li { margin-top: .4em; }
-.prose-dmu img { border-radius: 1rem; max-width: 100%; height: auto; }
+.prose-dmu img { border-radius: 1rem; max-width: 100%; height: auto; max-height: 80vh; object-fit: contain; }
+.prose-dmu img[src$=".svg"] { max-height: 260px; }
 .prose-dmu figure { margin-block: 1.75em; }
 .prose-dmu figure img { margin-inline: auto; }
 .prose-dmu p img { display: inline-block; margin-block: .5rem; margin-inline: 0 .5rem; vertical-align: top; }

@@ -9,7 +9,8 @@ export default function FilterableCards({ html, colleges, locale }: { html: stri
   const [college, setCollege] = useState('All');
   const [letter, setLetter] = useState('');
   const options = useMemo(() => ['All', ...Array.from(new Set(colleges)).sort()], [colleges]);
-  const bare = (n: string) => n.replace(/^(Prof\.?|Dr\.?|Mr\.?|Ms\.?|Mrs\.?|أ\.د\.|د\.|السيد|السيدة)\s*/i, '').trim();
+  // Name without titles (Dr., Prof., د., الدكتورة …); Arabic hamza forms count as ا for the A–Z buttons.
+  const bare = (n: string) => n.trim().replace(/^((Prof\.?|Dr\.?|Mr\.?|Ms\.?|Mrs\.?|أ\.\s?د\.|د\.|الأستاذة|الأستاذ|الدكتورة|الدكتور|السيدة|السيد)\s*)+/i, '').trim().replace(/^[أإآ]/, 'ا');
   const plain = (h: string) => h.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
   // Split the page text into: what comes before the card grid, each card, and what comes after.

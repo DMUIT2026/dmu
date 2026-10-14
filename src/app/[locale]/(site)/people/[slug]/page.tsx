@@ -6,6 +6,7 @@ import { ArrowLeft, Mail, Phone } from 'lucide-react';
 import Header from '@/components/site/Header';
 import RichText from '@/components/site/RichText';
 import ScopusAuthorPanel from '@/components/site/ScopusAuthorPanel';
+import { splitForScopus } from '@/components/site/ResearchProfile';
 import { Suspense } from 'react';
 import { getPerson } from '@/lib/content';
 import { collegeName, isLocale, lhref, pick, t, type Locale } from '@/lib/i18n';
@@ -24,6 +25,7 @@ export default async function PersonPage({ params }: Props) {
   const locale: Locale = isLocale(lc) ? lc : 'en';
   const p = await getPerson(slug);
   if (!p) notFound();
+  const bio = p.scopus_author_id ? splitForScopus(pick(p, 'bio', locale)) : [pick(p, 'bio', locale), ''];
   return (
     <>
       <Header locale={locale} />
@@ -46,7 +48,7 @@ export default async function PersonPage({ params }: Props) {
           </div>
         </div>
       </section>
-      <section className="container-x max-w-4xl py-14 md:py-20"><RichText html={pick(p, 'bio', locale)} locale={locale} /><Suspense fallback={null}><ScopusAuthorPanel authorId={p.scopus_author_id} locale={locale} /></Suspense></section>
+      <section className="container-x max-w-4xl py-14 md:py-20"><RichText html={bio[0]} locale={locale} /><Suspense fallback={null}><ScopusAuthorPanel authorId={p.scopus_author_id} locale={locale} /></Suspense>{bio[1] && <RichText html={bio[1]} locale={locale} className="mt-12" />}</section>
     </>
   );
 }

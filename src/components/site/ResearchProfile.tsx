@@ -11,6 +11,14 @@ import type { Locale } from '@/lib/i18n';
  */
 interface Head { photo?: string; name: string; lines: string[]; html?: string }
 const PUBS = /<h[2-4][^>]*>\s*(?:Research Publications|Publications|المنشورات البحثية|المنشورات)\s*<\/h[2-4]>[\s\S]*?(?=<h[2-4][\s>]|$)/i;
+const EXTERNAL = /<h[2-4][^>]*>\s*(?:External Profiles|الملفات الشخصية الخارجية)\s*<\/h[2-4]>/i;
+/** Splits profile text where the Scopus box belongs: in place of the publications list, else before "External Profiles", else at the end. */
+export function splitForScopus(html: string): [string, string] {
+  const m = html.match(PUBS) ?? html.match(EXTERNAL);
+  if (!m) return [html, ''];
+  const isPubs = PUBS.test(m[0]);
+  return [html.slice(0, m.index), html.slice(m.index! + (isPubs ? m[0].length : 0))];
+}
 const text = (s: string) => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').trim();
 
 function parseHead(html: string): { head: Head | null; rest: string } {
@@ -31,9 +39,7 @@ function parseHead(html: string): { head: Head | null; rest: string } {
 export default function ResearchProfile({ html, authorId, locale }: { html: string; authorId?: string; locale: Locale }) {
   const { head, rest } = parseHead(html);
   const hasScopus = !!authorId && /^\d{6,}$/.test(authorId);
-  const m = hasScopus ? rest.match(PUBS) : null;
-  const before = m ? rest.slice(0, m.index) : rest;
-  const after = m ? rest.slice(m.index! + m[0].length) : '';
+  const [before, after] = hasScopus ? splitForScopus(rest) : [rest, ''];
   const panel = hasScopus ? <Suspense fallback={null}><ScopusAuthorPanel authorId={authorId} locale={locale} /></Suspense> : null;
   return (
     <>

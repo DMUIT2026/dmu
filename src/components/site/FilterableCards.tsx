@@ -1,36 +1,37 @@
 'use client';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Search } from 'lucide-react';
 import { collegeName, type Locale } from '@/lib/i18n';
 
 /** A grid of profile cards with search, college and A–Z filters. colleges[i] belongs to the i-th card. */
 export default function FilterableCards({ html, colleges, locale }: { html: string; colleges: string[]; locale: Locale }) {
-  const ref = useRef<HTMLDivElement>(null);
   const [q, setQ] = useState('');
   const [college, setCollege] = useState('All');
   const [letter, setLetter] = useState('');
-  const [shown, setShown] = useState(colleges.length);
-  const [letters, setLetters] = useState<string[]>([]);
   const options = useMemo(() => ['All', ...Array.from(new Set(colleges)).sort()], [colleges]);
   const bare = (n: string) => n.replace(/^(Prof\.?|Dr\.?|Mr\.?|Ms\.?|Mrs\.?|أ\.د\.|د\.|السيد|السيدة)\s*/i, '').trim();
+  const plain = (h: string) => h.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
-  useEffect(() => {
-    const cards = Array.from(ref.current?.querySelectorAll<HTMLElement>('.card') ?? []);
-    setLetters(Array.from(new Set(cards.map(c => bare(c.querySelector('strong')?.textContent ?? '')[0]?.toUpperCase()).filter(Boolean))).sort());
+  // Split the page text into: what comes before the card grid, each card, and what comes after.
+  const parts = useMemo(() => {
+    const open = html.indexOf('<div class="cards">');
+    if (open < 0) return { before: html, cards: [] as { html: string; name: string; text: string }[], after: '' };
+    const found = [...html.slice(open).matchAll(/<(a|div) class="card"[\s\S]*?<\/\1>/g)];
+    const last = found.at(-1);
+    const close = last ? open + last.index! + last[0].length : open;
+    const rest = html.slice(close).replace(/^\s*<\/div>/, '');
+    return {
+      before: html.slice(0, open),
+      cards: found.map(m => ({ html: m[0], name: plain(m[0].match(/<strong>([\s\S]*?)<\/strong>/)?.[1] ?? ''), text: plain(m[0]).toLowerCase() })),
+      after: rest,
+    };
   }, [html]);
-  useEffect(() => {
-    const cards = Array.from(ref.current?.querySelectorAll<HTMLElement>('.card') ?? []);
-    let n = 0;
-    cards.forEach((c, i) => {
-      const name = c.querySelector('strong')?.textContent ?? '';
-      const ok = (college === 'All' || colleges[i] === college)
-        && (!q || c.textContent!.toLowerCase().includes(q.toLowerCase()))
-        && (!letter || bare(name).toUpperCase().startsWith(letter));
-      c.style.display = ok ? '' : 'none';
-      if (ok) n++;
-    });
-    setShown(n);
-  }, [q, college, letter, colleges]);
+  const letters = useMemo(() => Array.from(new Set(parts.cards.map(c => bare(c.name)[0]?.toUpperCase()).filter(Boolean))).sort(), [parts]);
+  const visible = parts.cards.map((c, i) =>
+    (college === 'All' || colleges[i] === college)
+    && (!q || c.text.includes(q.toLowerCase().trim()))
+    && (!letter || bare(c.name).toUpperCase().startsWith(letter)));
+  const shown = visible.filter(Boolean).length;
 
   const ar = locale === 'ar';
   return (
@@ -53,7 +54,13 @@ export default function FilterableCards({ html, colleges, locale }: { html: stri
         )}
       </div>
       <p className="mt-6 text-sm text-stone-500">{shown} {ar ? 'شخصًا' : shown === 1 ? 'person' : 'people'}</p>
-      <div ref={ref} className="prose-dmu" dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="prose-dmu">
+        {parts.before && <div dangerouslySetInnerHTML={{ __html: parts.before }} />}
+        <div className="cards">
+          {parts.cards.map((c, i) => <div key={i} className={visible[i] ? "contents" : "hidden"} dangerouslySetInnerHTML={{ __html: c.html }} />)}
+        </div>
+        {parts.after && <div dangerouslySetInnerHTML={{ __html: parts.after }} />}
+      </div>
     </div>
   );
 }

@@ -7,7 +7,7 @@ const allowed: sanitizeHtml.IOptions = {
   allowedAttributes: {
     a: ['href', 'target', 'rel', 'class'], img: ['src', 'alt', 'width', 'height', 'loading'], iframe: ['src', 'allowfullscreen', 'loading', 'title'],
     video: ['src', 'controls', 'preload', 'poster'], source: ['src', 'type'], td: ['colspan', 'rowspan'], th: ['colspan', 'rowspan'],
-    ol: ['start'], details: ['open'], div: ['class'], span: ['class'], p: ['style'], h2: ['style'], h3: ['style'], h4: ['style'],
+    ol: ['start'], details: ['open'], div: ['class', 'id'], figure: ['class'], span: ['class'], p: ['style'], h2: ['style'], h3: ['style'], h4: ['style'],
   },
   allowedStyles: { '*': { 'text-align': [/^(left|right|center|justify)$/] } },
   allowedIframeHostnames: ['www.youtube.com', 'youtube.com', 'www.youtube-nocookie.com', 'player.vimeo.com', 'www.google.com', 'maps.google.com', 'docs.google.com', 'forms.office.com', 'app.powerbi.com', 'view.officeapps.live.com', 'oppeygclkxogrsmsafng.supabase.co'],

@@ -9,6 +9,7 @@ import SideNav from '@/components/site/SideNav';
 import NewsList from '@/components/site/NewsList';
 import Directory from '@/components/site/Directory';
 import ContactForm from '@/components/site/ContactForm';
+import ScopusPublications from '@/components/site/ScopusPublications';
 import { getAllPagePaths, getDirectory, getMenu, getPage, getSettings } from '@/lib/content';
 import type { MenuGroup } from '@/lib/types';
 import { isLocale, label as lbl, locales, pick, t, type Locale } from '@/lib/i18n';
@@ -80,6 +81,8 @@ export default async function CmsPage({ params, searchParams }: Props) {
         <NewsList locale={locale} categories={page.meta.categories} page={Math.max(1, Number(sp.page) || 1)} basePath={'/' + path} showChips={false} />
       </>
     );
+  } else if (page.meta?.widget === 'scopus') {
+    body = <>{content && <RichText html={content} locale={locale} className="mb-8" />}<ScopusPublications locale={locale} /></>;
   } else if (page.template === 'directory') {
     const people = await getDirectory();
     body = <Directory people={people} locale={locale} />;
@@ -101,7 +104,7 @@ export default async function CmsPage({ params, searchParams }: Props) {
     );
   }
 
-  const wide = page.template === 'news' || page.template === 'directory' || page.template === 'contact' || /class="cards"/.test(content);
+  const wide = page.meta?.widget === 'scopus' || page.template === 'news' || page.template === 'directory' || page.template === 'contact' || /class="cards"/.test(content);
   return (
     <>
       <Header overlay locale={locale} />

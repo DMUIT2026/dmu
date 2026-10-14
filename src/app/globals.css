@@ -173,3 +173,18 @@ html.a11y-font .prose-dmu .card strong, html.a11y-font .prose-dmu .stat strong {
 }
 html.a11y-spacing .prose-dmu, html.a11y-spacing p, html.a11y-spacing li { line-height: 2.1 !important; word-spacing: .12em; }
 html.a11y-still *, html.a11y-still *::before, html.a11y-still *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+
+/* ---------- news article photos (position & size chosen in the admin) ---------- */
+.prose-dmu::after { content: ""; display: block; clear: both; }
+.prose-dmu figure.news-img { margin-block: 1.75rem; }
+.prose-dmu figure.news-img img { width: 100%; max-height: none; object-fit: cover; }
+.prose-dmu figure.news-img figcaption { margin-top: .5rem; font-size: .85rem; color: var(--color-stone-500); text-align: center; }
+@media (min-width: 640px) {
+  .prose-dmu figure.news-img--small { width: 33%; }
+  .prose-dmu figure.news-img--medium { width: 50%; }
+  .prose-dmu figure.news-img--large { width: 75%; }
+  .prose-dmu figure.news-img--full { width: 100%; }
+  .prose-dmu figure.news-img--center { margin-inline: auto; }
+  .prose-dmu figure.news-img--left:not(.news-img--full) { float: inline-start; margin-block: .35rem 1rem; margin-inline: 0 1.75rem; }
+  .prose-dmu figure.news-img--right:not(.news-img--full) { float: inline-end; margin-block: .35rem 1rem; margin-inline: 1.75rem 0; }
+}

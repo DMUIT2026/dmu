@@ -50,6 +50,17 @@ export interface Post {
   excerpt_ar?: string | null;
   content_ar?: string | null;
   ar_status?: 'needs_review' | 'reviewed';
+  images?: ArticleImage[];
+}
+
+/** An extra photo in a news article: where it goes, how it lines up, how big it is. */
+export interface ArticleImage {
+  url: string;
+  place: 'top' | 'middle' | 'end';
+  align: 'left' | 'center' | 'right';
+  size: 'small' | 'medium' | 'large' | 'full';
+  caption?: string;
+  caption_ar?: string;
 }
 
 export interface Category { slug: string; name: string; name_ar?: string | null; sort_order?: number }
@@ -90,7 +101,7 @@ export interface Program {
 }
 
 export interface MenuLink { label: string; label_ar?: string | null; url?: string | null; children?: MenuLink[] }
-export interface MenuGroup { title: string; title_ar?: string | null; links: MenuLink[] }
+export interface MenuGroup { title: string; title_ar?: string | null; url?: string | null; links: MenuLink[] }
 export interface Menu {
   key: string;
   title?: string | null;

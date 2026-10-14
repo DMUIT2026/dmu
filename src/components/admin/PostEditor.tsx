@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
 import { ExternalLink, Trash2 } from 'lucide-react';
 import RichEditor from './RichEditor';
+import ArticleImages from './ArticleImages';
 import { ImageField } from './MediaPicker';
 import { Card, Field, inputCls, LangTabs, PageTitle, savedMessage, StatusBadge, Toast } from './ui';
 import { Languages } from 'lucide-react';
@@ -49,6 +50,10 @@ export default function PostEditor({ initial, categories }: { initial: Post; cat
                 <Field label="Summary" hint="Shown on news cards and in Google."><textarea value={p.excerpt ?? ''} rows={3} onChange={e => set('excerpt', e.target.value || null)} className={inputCls} /></Field>
               </div></Card>
               <div><p className="mb-2 text-sm font-medium">Article</p><RichEditor key={'en' + edKey} value={p.content} onChange={v => set('content', v)} /></div>
+              <Card title="Photos in this article (up to 3)">
+                <p className="mb-4 text-sm text-stone-500">Choose where each photo appears and how big it is. They are shown in both English and Arabic.</p>
+                <ArticleImages value={p.images ?? []} onChange={v => set('images', v)} />
+              </Card>
             </>
           ) : (
             <>

@@ -1,6 +1,6 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { EditorContent, NodeViewWrapper, ReactNodeViewRenderer, useEditor, useEditorState, type NodeViewProps } from '@tiptap/react';
+import { useEffect, useReducer, useState } from 'react';
+import { EditorContent, NodeViewWrapper, ReactNodeViewRenderer, useEditor, type NodeViewProps } from '@tiptap/react';
 import { Node, mergeAttributes } from '@tiptap/core';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
@@ -96,16 +96,21 @@ export default function RichEditor({ value, onChange, dir = 'ltr' }: { value: st
     editorProps: { attributes: { class: 'prose-dmu min-h-[420px] px-6 py-5 outline-none', dir } },
     onUpdate: ({ editor }) => onChange(editorToHtml(editor.getHTML())),
   });
-  const st = useEditorState({
-    editor,
-    selector: ({ editor: e }) => e ? ({
-      h2: e.isActive('heading', { level: 2 }), h3: e.isActive('heading', { level: 3 }), h4: e.isActive('heading', { level: 4 }),
-      bold: e.isActive('bold'), italic: e.isActive('italic'), underline: e.isActive('underline'), link: e.isActive('link'),
-      ul: e.isActive('bulletList'), ol: e.isActive('orderedList'), quote: e.isActive('blockquote'), table: e.isActive('table'),
-      left: e.isActive({ textAlign: 'left' }), center: e.isActive({ textAlign: 'center' }), right: e.isActive({ textAlign: 'right' }), justify: e.isActive({ textAlign: 'justify' }),
-      undo: e.can().undo(), redo: e.can().redo(),
-    }) : null,
-  });
+  // re-draw the toolbar after every change so the active buttons stay correct
+  const [, redraw] = useReducer((x: number) => x + 1, 0);
+  useEffect(() => {
+    if (!editor) return;
+    editor.on('transaction', redraw);
+    return () => { editor.off('transaction', redraw); };
+  }, [editor]);
+  const e = editor;
+  const st = e ? {
+    h2: e.isActive('heading', { level: 2 }), h3: e.isActive('heading', { level: 3 }), h4: e.isActive('heading', { level: 4 }),
+    bold: e.isActive('bold'), italic: e.isActive('italic'), underline: e.isActive('underline'), link: e.isActive('link'),
+    ul: e.isActive('bulletList'), ol: e.isActive('orderedList'), quote: e.isActive('blockquote'), table: e.isActive('table'),
+    left: e.isActive({ textAlign: 'left' }), center: e.isActive({ textAlign: 'center' }), right: e.isActive({ textAlign: 'right' }), justify: e.isActive({ textAlign: 'justify' }),
+    undo: e.can().undo(), redo: e.can().redo(),
+  } : null;
 
   useEffect(() => { if (!source) setSrc(value); }, [source, value]);
   if (!editor || !st) return <div className="min-h-[480px] rounded-2xl border border-line bg-white" />;

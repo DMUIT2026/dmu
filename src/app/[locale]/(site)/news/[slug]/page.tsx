@@ -7,7 +7,7 @@ import Header from '@/components/site/Header';
 import RichText from '@/components/site/RichText';
 import NewsCard from '@/components/site/NewsCard';
 import { getCategories, getPost, getPosts } from '@/lib/content';
-import { stripHtml, truncate } from '@/lib/format';
+import { placeArticleImages, stripHtml, truncate } from '@/lib/format';
 import { fmtDateL, isLocale, lhref, pick, t, type Locale } from '@/lib/i18n';
 
 export const revalidate = 300;
@@ -50,7 +50,7 @@ export default async function NewsArticle({ params }: Props) {
             </div>
           </div>
         )}
-        <div className="container-x max-w-3xl py-12 md:py-16"><RichText html={pick(post, 'content', locale)} locale={locale} /></div>
+        <div className="container-x max-w-3xl py-12 md:py-16"><RichText html={placeArticleImages(pick(post, 'content', locale), post.images, locale === 'ar')} locale={locale} /></div>
       </article>
       {more.length > 0 && (
         <section className="border-t border-line bg-sand-100/60 py-16 md:py-20">

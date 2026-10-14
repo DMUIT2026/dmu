@@ -23,7 +23,9 @@ export default function CollegeNav({ title, url, groups, locale }: { title: stri
         <Link href={lhref(locale, url ?? '#')} className="font-display shrink-0 py-3.5 pe-4 text-[1.05rem] text-bronze-700 border-e border-line me-2 hover:text-ink">
           {title.replace(/\s*\(.*\)\s*/, '')}
         </Link>
-        {groups.map((g, i) => (
+        {groups.map((g, i) => !g.links?.length && g.url ? (
+          <Link key={g.title} href={lhref(locale, g.url)} className={`shrink-0 rounded-full px-3 py-2 text-sm font-medium transition ${pathname === lhref(locale, g.url) ? 'bg-sand-100 text-ink' : 'text-ink/75 hover:bg-sand-100 hover:text-ink'}`}>{lbl(g, locale)}</Link>
+        ) : (
           <div key={g.title} className="relative shrink-0">
             <button type="button" onClick={e => { e.stopPropagation(); setOpen(open === i ? null : i); }} aria-expanded={open === i}
               className={`flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium transition ${open === i ? 'bg-sand-100 text-ink' : 'text-ink/75 hover:text-ink hover:bg-sand-100'}`}>

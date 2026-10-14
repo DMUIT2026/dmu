@@ -87,7 +87,7 @@ export default async function Home() {
         <div className="relative">
           {s.home_intro?.image && (
             <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] shadow-[var(--shadow-lift)]">
-              <Image src={s.home_intro.image} alt="Dubai Medical University" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover" />
+              <Image src={s.home_intro.image} alt="Dubai Medical University" fill sizes="(min-width:1024px) 50vw, 100vw" quality={90} className="object-cover" />
             </div>
           )}
           <div className="relative -mt-16 ml-6 mr-6 grid grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] bg-white/10 shadow-[var(--shadow-lift)] sm:ml-12 sm:mr-0 sm:grid-cols-4 lg:-ml-16">
@@ -147,7 +147,7 @@ export default async function Home() {
             </div>
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {life.map(p => (
-                <Link key={p!.path} href={'/' + p!.path} className="group relative aspect-[3/4] overflow-hidden rounded-[var(--radius-card)] bg-bronze-800">
+                <Link key={p!.path} href={'/' + p!.path} className="group relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-bronze-800">
                   {p!.hero_image && <Image src={p!.hero_image} alt="" fill sizes="(min-width:1024px) 25vw, 50vw" className="object-cover opacity-90 transition duration-700 group-hover:scale-105 group-hover:opacity-100" />}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6">

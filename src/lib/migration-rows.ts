@@ -19,6 +19,7 @@ const CATEGORY_ORDER: Record<string, [string, number]> = {
   dsa: ['Student Affairs', 5], 'community-engagements': ['Community Engagement', 6], qaie: ['QAIE', 7], sustainability: ['Sustainability', 8],
 };
 
+const LIB = 'https://oppeygclkxogrsmsafng.supabase.co/storage/v1/object/public/media/library/2026/';
 const UP = 'https://dmu.ae/home/wp-content/uploads/';
 const DEFAULT_HERO: Record<string, string> = {
   'college-of-medicine': UP + '2026/08/dmucom26_header1.jpg',
@@ -119,8 +120,9 @@ export function buildRows(): Rows {
       eyebrow: 'Dubai Medical University',
       title: 'Empower the next generation of health care leaders.',
       text: 'Medicine, pharmacy, nursing and health sciences — taught on one campus in Dubai, with nearly four decades of heritage.',
-      slides: ['2026/08/header_studets.jpg', '2026/08/dmucom26_header5.jpg', '2026/08/dmu_header99.jpg']
-        .map(f => ({ image: 'https://dmu.ae/home/wp-content/uploads/' + f })),
+      // high-quality photos from the old site's library (the page banners are too small for large display)
+      slides: ['LIB:con_slider2.jpg', '2026/08/header_studets.jpg', '2026/08/dmu_header99.jpg']
+        .map(f => ({ image: f.startsWith('LIB:') ? LIB + f.slice(4) : 'https://dmu.ae/home/wp-content/uploads/' + f })),
     },
     home_colleges: s.home_colleges,
     home_stats: s.home_stats,
@@ -128,7 +130,7 @@ export function buildRows(): Rows {
     home_intro: {
       title: 'About DMU',
       text: about ?? '',
-      image: vision?.content.match(/<img src="([^"]*about_dmu[^"]*)"/)?.[1] ?? null,
+      image: LIB + 'dmu_slider2.jpg',
       link: '/vision-and-mission',
     },
     portal_links: (m.footer_quick as { label: string; url: string }[]).filter(l => /login/i.test(l.label)),

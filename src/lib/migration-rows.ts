@@ -121,7 +121,7 @@ export function buildRows(): Rows {
       title: 'Empower the next generation of health care leaders.',
       text: 'Medicine, pharmacy, nursing and health sciences — taught on one campus in Dubai, with nearly four decades of heritage.',
       // high-quality photos from the old site's library (the page banners are too small for large display)
-      slides: ['LIB:con_slider2.jpg', '2026/08/header_studets.jpg', '2026/08/dmu_header99.jpg']
+      slides: ['LIB:dpc_slier2.jpg', '2026/08/header_studets.jpg', '2026/08/dmu_header99.jpg']
         .map(f => ({ image: f.startsWith('LIB:') ? LIB + f.slice(4) : 'https://dmu.ae/home/wp-content/uploads/' + f })),
     },
     home_colleges: s.home_colleges,

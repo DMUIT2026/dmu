@@ -20,8 +20,7 @@ const DB = process.env.DATABASE_URL!;
 if (!KEY) { console.error('Please fill SUPABASE_SECRET_KEY in .env.local first.'); process.exit(1); }
 const sb = createClient(URL_, KEY, { auth: { persistSession: false } });
 const MEDIA = path.join(process.cwd(), 'migration', 'media');
-const ownerArg = process.argv.indexOf('--owner');
-const ownerEmail = ownerArg > -1 ? process.argv[ownerArg + 1] : null;
+const owners = process.argv.flatMap((a, i) => (a === '--owner' ? [process.argv[i + 1]] : [])).filter(Boolean);
 
 async function schema() {
   if (!DB || DB.includes('YOUR-PASSWORD')) { console.log('schema: skipped (tables were created in the Supabase SQL editor)'); return; }
@@ -42,8 +41,13 @@ async function pool<T>(items: T[], n: number, fn: (t: T, i: number) => Promise<v
 
 async function uploadMedia(): Promise<Map<string, string>> {
   const map = JSON.parse(fs.readFileSync('migration/data/media_map.json', 'utf8')) as Record<string, { status: string; file: string | null }>;
-  const { data: existing } = await sb.from('media').select('original_url,url').limit(10000);
-  const done = new Map((existing ?? []).filter(r => r.original_url).map(r => [r.original_url as string, r.url as string]));
+  const existing: { original_url: string | null; url: string }[] = [];
+  for (let from = 0; ; from += 1000) {
+    const { data } = await sb.from('media').select('original_url,url').range(from, from + 999);
+    existing.push(...(data ?? []));
+    if (!data || data.length < 1000) break;
+  }
+  const done = new Map(existing.filter(r => r.original_url).map(r => [r.original_url as string, r.url as string]));
   const urlMap = new Map<string, string>(done);
   const todo = Object.entries(map).filter(([u, v]) => v.file && !done.has(u));
   console.log(`files: ${done.size} already uploaded, ${todo.length} to upload`);
@@ -67,7 +71,7 @@ function rewriter(urlMap: Map<string, string>) {
   // index by path after /uploads/ so http/https and resized variants all match
   const byPath = new Map<string, string>();
   for (const [o, u] of urlMap) { const k = o.split('#')[0].replace(/^https?:\/\/(www\.)?/, ''); byPath.set(k, u); }
-  const re = /(?:https?:)?\/\/(?:www\.)?dmu\.ae\/home\/(?:wp-content\/uploads|downloads)\/[^"'\s)<>]+/g;
+  const re = /(?:https?:)?\/\/(?:www\.)?dmu\.ae\/home\/(?:wp-content\/uploads|downloads|dmuvideos)\/[^"'\\\s)<>]+/g;
   return (s: string) => s.replace(re, m => {
     const k = m.split('#')[0].replace(/^(?:https?:)?\/\/(www\.)?/, '');
     return byPath.get(k) ?? byPath.get(k.replace(/-\d{2,4}x\d{2,4}(\.\w+)$/, '$1')) ?? m;
@@ -86,7 +90,8 @@ async function main() {
   await schema();
   const urlMap = await uploadMedia();
   const fix = rewriter(urlMap);
-  const rows = JSON.parse(fix(JSON.stringify(buildRows()))) as ReturnType<typeof buildRows>;
+  const deep = (v: unknown): unknown => typeof v === 'string' ? fix(v) : Array.isArray(v) ? v.map(deep) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, deep(x)])) : v;
+  const rows = deep(buildRows()) as ReturnType<typeof buildRows>;
 
   await upsert('categories', rows.categories, 'slug');
   await upsert('pages', rows.pages.map(p => ({ ...p, published_at: p.status === 'published' ? new Date().toISOString() : null })), 'path');
@@ -102,13 +107,13 @@ async function main() {
   const left = JSON.stringify(rows).match(/dmu\.ae\/home\/wp-content\/uploads\/[^"\\]+/g) ?? [];
   console.log(`links still pointing to old site files: ${new Set(left).size}`);
 
-  if (ownerEmail) {
+  for (const ownerEmail of owners) {
     const site = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
     let id: string | undefined;
     const inv = await sb.auth.admin.inviteUserByEmail(ownerEmail, { redirectTo: `${site}/admin/auth/callback?next=/admin/account` });
     if (inv.error) { const { data } = await sb.auth.admin.listUsers({ perPage: 1000 }); id = data.users.find(u => u.email?.toLowerCase() === ownerEmail.toLowerCase())?.id; }
     else id = inv.data.user?.id;
-    if (!id) throw new Error('Could not create the owner account: ' + inv.error?.message);
+    if (!id) { console.warn(`could not create ${ownerEmail}: ${inv.error?.message}`); continue; }
     await sb.from('admins').upsert({ user_id: id, email: ownerEmail.toLowerCase(), role: 'owner' });
     console.log(`owner: ${ownerEmail} ${inv.error ? '(existing account)' : '(invitation email sent)'}`);
   }

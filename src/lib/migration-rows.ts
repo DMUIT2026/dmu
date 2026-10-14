@@ -54,7 +54,8 @@ export function buildRows(): Rows {
   });
 
   type RawPost = Post & { original_url?: string };
-  const posts: Post[] = read<RawPost[]>('posts').map(p => ({
+  const seenSlugs = new Set<string>();
+  const posts: Post[] = read<RawPost[]>('posts').filter(p => !seenSlugs.has(p.slug) && !!seenSlugs.add(p.slug)).map(p => ({
     slug: p.slug, title: p.title, excerpt: p.excerpt ?? null, cover_image: p.cover_image ?? null, content: p.content,
     categories: (p.categories ?? []).map(c => (c === 'community-engagement' ? 'community-engagements' : c.replace(/-latest$/, ''))).filter((c, i, a) => a.indexOf(c) === i),
     status: 'published', featured: false, published_at: p.published_at ?? null,
@@ -69,7 +70,8 @@ export function buildRows(): Rows {
   const people: Person[] = [];
   const used = new Set<string>();
   for (const d of dir) {
-    const prof = d.profile_slug ? profiles.find(p => p.slug === d.profile_slug) : undefined;
+    // a profile can only belong to one directory entry
+    const prof = d.profile_slug && !used.has(d.profile_slug) ? profiles.find(p => p.slug === d.profile_slug) : undefined;
     if (prof) used.add(prof.slug);
     people.push({
       slug: prof?.slug ?? null, name: d.name, title: d.title || prof?.title || null, department: d.department || null,

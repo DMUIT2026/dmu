@@ -16,7 +16,7 @@ export default function Account() {
   }
   return (
     <>
-      <PageTitle title="My account" subtitle="Set or change your password." />
+      <PageTitle title="My account" subtitle="Welcome! Choose a password (at least 10 characters). You will use it with your email address to sign in." />
       <form onSubmit={submit} className="grid max-w-md gap-4 rounded-2xl border border-line bg-white p-6">
         <label className="grid gap-1.5 text-sm font-medium">New password<input name="p1" type="password" autoComplete="new-password" className={inputCls} /></label>
         <label className="grid gap-1.5 text-sm font-medium">Repeat new password<input name="p2" type="password" autoComplete="new-password" className={inputCls} /></label>

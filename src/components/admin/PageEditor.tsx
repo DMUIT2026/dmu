@@ -4,7 +4,8 @@ import { useState, useTransition } from 'react';
 import { ExternalLink, Plus, Trash2, X } from 'lucide-react';
 import RichEditor from './RichEditor';
 import { ImageField } from './MediaPicker';
-import { Card, Field, inputCls, PageTitle, StatusBadge, Toast } from './ui';
+import { Card, Field, inputCls, LangTabs, PageTitle, savedMessage, StatusBadge, Toast } from './ui';
+import { Languages } from 'lucide-react';
 import { deletePage, savePage } from '@/app/admin/actions';
 import type { Page } from '@/lib/types';
 
@@ -14,19 +15,22 @@ export default function PageEditor({ initial, menus, categories }: { initial: Pa
   const [p, setP] = useState<Page>(initial);
   const [toast, setToast] = useState<{ msg: string; kind: 'ok' | 'error' } | null>(null);
   const [pending, start] = useTransition();
+  const [lang, setLang] = useState<'en' | 'ar'>('en');
+  const [edKey, setEdKey] = useState(0);
   const router = useRouter();
   const set = <K extends keyof Page>(k: K, v: Page[K]) => setP(x => ({ ...x, [k]: v }));
   const setMeta = (k: string, v: unknown) => setP(x => ({ ...x, meta: { ...x.meta, [k]: v } }));
   const facts = p.meta.facts ?? [];
 
-  function save(status?: 'draft' | 'published') {
+  function save(status?: 'draft' | 'published', retranslate = false) {
     start(async () => {
       const section = ['college-of-medicine', 'college-of-pharmacy', 'college-of-nursing', 'college-of-health-sciences'].find(s => p.path === s || p.path.startsWith(s + '/')) ?? null;
-      const res = await savePage({ ...p, section, status: status ?? p.status });
+      const res = await savePage({ ...p, section, status: status ?? p.status, ...(retranslate ? { __translate: true } : {}) });
       if (!res.ok) { setToast({ msg: res.error ?? 'Could not save', kind: 'error' }); return; }
-      if (status) set('status', status);
-      setToast({ msg: status === 'published' ? 'Published — the page is live.' : status === 'draft' ? 'Saved as draft (hidden from visitors).' : 'Changes saved.', kind: 'ok' });
-      setTimeout(() => setToast(null), 3500);
+      if (res.row) { setP(res.row as unknown as Page); if (res.translated) setEdKey(k => k + 1); }
+      const base = status === 'published' ? 'Published — the page is live.' : status === 'draft' ? 'Saved as draft (hidden from visitors).' : 'Changes saved.';
+      setToast({ msg: savedMessage(base, res), kind: res.warning ? 'error' : 'ok' });
+      setTimeout(() => setToast(null), 5000);
       if (!p.id && res.id) router.replace(`/admin/pages/${res.id}`);
     });
   }
@@ -43,30 +47,52 @@ export default function PageEditor({ initial, menus, categories }: { initial: Pa
         </>} />
       <div className="grid gap-6 xl:grid-cols-[1fr_320px]">
         <div className="space-y-6 min-w-0">
-          <Card>
-            <div className="grid gap-4">
-              <Field label="Title"><input value={p.title} onChange={e => set('title', e.target.value)} className={`${inputCls} font-display !text-xl`} /></Field>
-              <Field label="Short introduction under the title (optional)"><input value={p.subtitle ?? ''} onChange={e => set('subtitle', e.target.value || null)} className={inputCls} /></Field>
-            </div>
-          </Card>
-          {p.template === 'program' && (
-            <Card title="Programme key facts">
-              <div className="space-y-2">
-                {facts.map((f, i) => (
-                  <div key={i} className="flex gap-2">
-                    <input value={f.label} placeholder="e.g. Duration" onChange={e => setMeta('facts', facts.map((x, j) => j === i ? { ...x, label: e.target.value } : x))} className={`${inputCls} max-w-48`} />
-                    <input value={f.value} placeholder="e.g. 4 years" onChange={e => setMeta('facts', facts.map((x, j) => j === i ? { ...x, value: e.target.value } : x))} className={inputCls} />
-                    <button onClick={() => setMeta('facts', facts.filter((_, j) => j !== i))} className="px-2 text-stone-500 hover:text-red-700" aria-label="Remove"><X className="size-4" /></button>
+          <LangTabs lang={lang} setLang={setLang} arStatus={p.ar_status} />
+          {lang === 'en' ? (
+            <>
+              <Card>
+                <div className="grid gap-4">
+                  <Field label="Title"><input value={p.title} onChange={e => set('title', e.target.value)} className={`${inputCls} font-display !text-xl`} /></Field>
+                  <Field label="Short introduction under the title (optional)"><input value={p.subtitle ?? ''} onChange={e => set('subtitle', e.target.value || null)} className={inputCls} /></Field>
+                </div>
+              </Card>
+              {p.template === 'program' && (
+                <Card title="Programme key facts">
+                  <div className="space-y-2">
+                    {facts.map((f, i) => (
+                      <div key={i} className="flex gap-2">
+                        <input value={f.label} placeholder="e.g. Duration" onChange={e => setMeta('facts', facts.map((x, j) => j === i ? { ...x, label: e.target.value } : x))} className={`${inputCls} max-w-48`} />
+                        <input value={f.value} placeholder="e.g. 4 years" onChange={e => setMeta('facts', facts.map((x, j) => j === i ? { ...x, value: e.target.value } : x))} className={inputCls} />
+                        <button onClick={() => setMeta('facts', facts.filter((_, j) => j !== i))} className="px-2 text-stone-500 hover:text-red-700" aria-label="Remove"><X className="size-4" /></button>
+                      </div>
+                    ))}
+                    <button onClick={() => setMeta('facts', [...facts, { label: '', value: '' }])} className="inline-flex items-center gap-1 text-sm text-bronze-700"><Plus className="size-4" />Add fact</button>
                   </div>
-                ))}
-                <button onClick={() => setMeta('facts', [...facts, { label: '', value: '' }])} className="inline-flex items-center gap-1 text-sm text-bronze-700"><Plus className="size-4" />Add fact</button>
+                </Card>
+              )}
+              <div>
+                <p className="mb-2 text-sm font-medium">Page content</p>
+                <RichEditor key={'en' + edKey} value={p.content} onChange={v => set('content', v)} />
               </div>
-            </Card>
+            </>
+          ) : (
+            <>
+              <Card>
+                <div className="grid gap-4" dir="rtl">
+                  <Field label="العنوان"><input value={p.title_ar ?? ''} onChange={e => set('title_ar', e.target.value)} className={`${inputCls} font-display !text-xl`} /></Field>
+                  <Field label="مقدمة قصيرة (اختياري)"><input value={p.subtitle_ar ?? ''} onChange={e => set('subtitle_ar', e.target.value || null)} className={inputCls} /></Field>
+                </div>
+                <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4">
+                  <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={p.ar_status === 'reviewed'} onChange={e => set('ar_status', e.target.checked ? 'reviewed' : 'needs_review')} />Arabic checked by a person</label>
+                  <button type="button" disabled={pending} onClick={() => { if (confirm('Replace the Arabic with a fresh translation of the English?')) save(undefined, true); }} className="btn btn-outline !py-2 !text-sm"><Languages className="size-4" />Translate again</button>
+                </div>
+              </Card>
+              <div>
+                <p className="mb-2 text-sm font-medium">محتوى الصفحة</p>
+                <RichEditor key={'ar' + edKey} dir="rtl" value={p.content_ar ?? ''} onChange={v => set('content_ar', v)} />
+              </div>
+            </>
           )}
-          <div>
-            <p className="mb-2 text-sm font-medium">Page content</p>
-            <RichEditor value={p.content} onChange={v => set('content', v)} />
-          </div>
         </div>
         <div className="space-y-6">
           <Card title="Status"><StatusBadge status={p.status} /><p className="mt-3 text-xs text-stone-500">Drafts are only visible to admins. Publish to show the page on the website.</p></Card>
@@ -107,6 +133,7 @@ export default function PageEditor({ initial, menus, categories }: { initial: Pa
             <div className="grid gap-4">
               <Field label="Title in Google"><input value={p.seo_title ?? ''} onChange={e => set('seo_title', e.target.value || null)} className={inputCls} /></Field>
               <Field label="Description in Google"><textarea value={p.seo_description ?? ''} rows={3} onChange={e => set('seo_description', e.target.value || null)} className={inputCls} /></Field>
+              <Field label="Description in Google (Arabic)"><textarea dir="rtl" value={p.seo_description_ar ?? ''} rows={3} onChange={e => set('seo_description_ar', e.target.value || null)} className={inputCls} /></Field>
             </div>
           </Card>
           {p.id && (

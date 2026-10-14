@@ -14,12 +14,14 @@ const allowed: sanitizeHtml.IOptions = {
   allowedSchemes: ['http', 'https', 'mailto', 'tel'],
 };
 
-export function prepareHtml(html: string) {
-  return sanitizeHtml(html ?? '', allowed)
+export function prepareHtml(html: string, locale: 'en' | 'ar' = 'en') {
+  let out = sanitizeHtml(html ?? '', allowed);
+  if (locale === 'ar') out = out.replace(/href="\/(?!ar\/|ar"|admin)/g, 'href="/ar/');
+  return out
     .replace(/<table/g, '<div class="table-wrap"><table').replace(/<\/table>/g, '</table></div>')
     .replace(/<img /g, '<img loading="lazy" ');
 }
 
-export default function RichText({ html, className = '' }: { html: string; className?: string }) {
-  return <div className={`prose-dmu ${className}`} dangerouslySetInnerHTML={{ __html: prepareHtml(html) }} />;
+export default function RichText({ html, className = '', locale = 'en' }: { html: string; className?: string; locale?: 'en' | 'ar' }) {
+  return <div className={`prose-dmu ${className}`} dangerouslySetInnerHTML={{ __html: prepareHtml(html, locale) }} />;
 }

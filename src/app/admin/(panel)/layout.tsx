@@ -2,6 +2,8 @@ import AdminNav from '@/components/admin/AdminNav';
 import { requireAdmin } from '@/lib/admin-auth';
 
 export const dynamic = 'force-dynamic';
+// saving can include an automatic translation, which may take a little longer
+export const maxDuration = 60;
 
 export default async function PanelLayout({ children }: { children: React.ReactNode }) {
   const { supabase, user } = await requireAdmin();

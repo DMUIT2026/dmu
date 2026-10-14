@@ -47,6 +47,8 @@ export default function ProgramsEditor({ initial }: { initial: Program[] }) {
                 <Field label="College"><select value={p.college} onChange={e => upd(i, 'college', e.target.value)} className={inputCls}>{COLLEGES.map(c => <option key={c}>{c}</option>)}</select></Field>
                 <Field label="Level"><select value={p.level} onChange={e => upd(i, 'level', e.target.value)} className={inputCls}><option>Undergraduate</option><option>Postgraduate</option></select></Field>
                 <Field label="Start date"><input value={p.start_date ?? ''} onChange={e => upd(i, 'start_date', e.target.value)} className={inputCls} placeholder="e.g. August 2027" /></Field>
+                <Field label="Programme name (Arabic)" hint="Filled in automatically if empty."><input dir="rtl" value={p.title_ar ?? ''} onChange={e => upd(i, 'title_ar', e.target.value)} className={inputCls} /></Field>
+                <Field label="Start date (Arabic)"><input dir="rtl" value={p.start_date_ar ?? ''} onChange={e => upd(i, 'start_date_ar', e.target.value)} className={inputCls} /></Field>
                 <label className="flex items-center gap-2 self-end pb-3 text-sm"><input type="checkbox" checked={p.status === 'published'} onChange={e => upd(i, 'status', e.target.checked ? 'published' : 'draft')} />Show on website</label>
                 <div className="md:col-span-2"><ImageField value={p.image} onChange={v => upd(i, 'image', v)} /></div>
                 <div className="flex justify-between md:col-span-2">

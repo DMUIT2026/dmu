@@ -18,10 +18,10 @@ export default async function Preview({ params }: { params: Promise<{ kind: stri
   return (
     <div className="bg-sand-50">
       <div className="fixed bottom-4 left-1/2 z-[60] -translate-x-1/2 rounded-full bg-espresso px-5 py-2 text-sm text-white shadow-lg">Preview{data.status === 'draft' ? ' of a draft — not visible to visitors' : ''}</div>
-      <Header overlay />
-      <PageHero title={data.title} image={kind === 'post' ? data.cover_image : data.hero_image} eyebrow={kind === 'post' ? fmtDate(data.published_at) : undefined} subtitle={data.subtitle} />
+      <Header overlay locale="en" />
+      <PageHero locale="en" title={data.title} image={kind === 'post' ? data.cover_image : data.hero_image} eyebrow={kind === 'post' ? fmtDate(data.published_at) : undefined} subtitle={data.subtitle} />
       <section className="container-x max-w-4xl py-16"><RichText html={data.content} /></section>
-      <Footer />
+      <Footer locale="en" />
     </div>
   );
 }

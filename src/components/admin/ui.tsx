@@ -46,3 +46,23 @@ export function Toast({ msg, kind }: { msg: string | null; kind: 'ok' | 'error' 
   if (!msg) return null;
   return <div role="status" className={`fixed bottom-6 right-6 z-50 rounded-xl px-4 py-3 text-sm shadow-lg ${kind === 'ok' ? 'bg-espresso text-white' : 'bg-red-700 text-white'}`}>{msg}</div>;
 }
+
+/** English / Arabic switch used in the editors. */
+export function LangTabs({ lang, setLang, arStatus }: { lang: 'en' | 'ar'; setLang: (l: 'en' | 'ar') => void; arStatus?: string }) {
+  const b = (l: 'en' | 'ar', text: string) => (
+    <button type="button" onClick={() => setLang(l)} className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${lang === l ? 'bg-espresso text-white' : 'text-ink/70 hover:bg-sand-100'}`}>{text}</button>
+  );
+  return (
+    <div className="mb-4 flex flex-wrap items-center gap-2">
+      <div className="inline-flex rounded-full border border-line bg-white p-1">{b('en', 'English')}{b('ar', 'العربية')}</div>
+      {arStatus === 'needs_review' && <span className="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800">Arabic: needs review</span>}
+      {arStatus === 'reviewed' && <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-800">Arabic: checked</span>}
+    </div>
+  );
+}
+
+export function savedMessage(base: string, r: { translated?: number; warning?: string }) {
+  if (r.warning) return `${base} Arabic not updated: ${r.warning}`;
+  if (r.translated) return `${base} Arabic translated automatically.`;
+  return base;
+}

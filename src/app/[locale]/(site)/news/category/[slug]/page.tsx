@@ -4,26 +4,29 @@ import Header from '@/components/site/Header';
 import PageHero from '@/components/site/PageHero';
 import NewsList from '@/components/site/NewsList';
 import { getCategories } from '@/lib/content';
+import { isLocale, pick, t, type Locale } from '@/lib/i18n';
 
 export const revalidate = 300;
-type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ page?: string }> };
+type Props = { params: Promise<{ locale: string; slug: string }>; searchParams: Promise<{ page?: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params; const l: Locale = isLocale(locale) ? locale : 'en';
   const c = (await getCategories()).find(c => c.slug === slug);
-  return { title: c ? `${c.name} News` : 'News' };
+  return { title: c ? `${pick(c, 'name', l)} – ${t(l, 'news')}` : t(l, 'news') };
 }
 
 export default async function CategoryPage({ params, searchParams }: Props) {
-  const [{ slug }, sp] = await Promise.all([params, searchParams]);
+  const [{ slug, locale: lc }, sp] = await Promise.all([params, searchParams]);
+  const locale: Locale = isLocale(lc) ? lc : 'en';
   const cat = (await getCategories()).find(c => c.slug === slug);
   if (!cat) notFound();
+  const name = pick(cat, 'name', locale);
   return (
     <>
-      <Header overlay />
-      <PageHero title={`${cat.name} News`} eyebrow="Media" crumbs={[{ label: 'News & Events', href: '/news' }, { label: cat.name }]} compact />
+      <Header overlay locale={locale} />
+      <PageHero locale={locale} title={name} eyebrow={t(locale, 'news')} crumbs={[{ label: t(locale, 'news'), href: '/news' }, { label: name }]} compact />
       <section className="container-x py-14 md:py-20">
-        <NewsList categories={[slug]} page={Math.max(1, Number(sp.page) || 1)} basePath={`/news/category/${slug}`} activeChip={slug} />
+        <NewsList locale={locale} categories={[slug]} page={Math.max(1, Number(sp.page) || 1)} basePath={`/news/category/${slug}`} activeChip={slug} />
       </section>
     </>
   );

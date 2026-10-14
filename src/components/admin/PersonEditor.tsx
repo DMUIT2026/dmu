@@ -4,7 +4,7 @@ import { useState, useTransition } from 'react';
 import { ExternalLink, Trash2 } from 'lucide-react';
 import RichEditor from './RichEditor';
 import { ImageField } from './MediaPicker';
-import { Card, Field, inputCls, PageTitle, Toast } from './ui';
+import { Card, Field, inputCls, LangTabs, PageTitle, savedMessage, Toast } from './ui';
 import { deletePerson, savePerson } from '@/app/admin/actions';
 import type { Person } from '@/lib/types';
 
@@ -14,12 +14,15 @@ export default function PersonEditor({ initial }: { initial: Person }) {
   const [p, setP] = useState<Person>(initial);
   const [toast, setToast] = useState<{ msg: string; kind: 'ok' | 'error' } | null>(null);
   const [pending, start] = useTransition();
+  const [lang, setLang] = useState<'en' | 'ar'>('en');
+  const [edKey, setEdKey] = useState(0);
   const router = useRouter();
   const set = <K extends keyof Person>(k: K, v: Person[K]) => setP(x => ({ ...x, [k]: v }));
   const save = () => start(async () => {
     const res = await savePerson({ ...p });
     if (!res.ok) { setToast({ msg: res.error ?? 'Could not save', kind: 'error' }); return; }
-    setToast({ msg: 'Saved — the website is updated.', kind: 'ok' }); setTimeout(() => setToast(null), 3000);
+    if (res.row) { setP(res.row as unknown as Person); if (res.translated) setEdKey(k => k + 1); }
+    setToast({ msg: savedMessage('Saved — the website is updated.', res), kind: res.warning ? 'error' : 'ok' }); setTimeout(() => setToast(null), 5000);
     if (!p.id && res.id) router.replace(`/admin/people/${res.id}`);
   });
   return (
@@ -30,15 +33,29 @@ export default function PersonEditor({ initial }: { initial: Person }) {
       </>} />
       <div className="grid gap-6 xl:grid-cols-[1fr_320px]">
         <div className="min-w-0 space-y-6">
-          <Card><div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Full name"><input value={p.name} onChange={e => set('name', e.target.value)} className={inputCls} /></Field>
-            <Field label="Job title"><input value={p.title ?? ''} onChange={e => set('title', e.target.value || null)} className={inputCls} /></Field>
-            <Field label="Department"><input value={p.department ?? ''} onChange={e => set('department', e.target.value || null)} className={inputCls} /></Field>
-            <Field label="College"><select value={p.college ?? ''} onChange={e => set('college', e.target.value || null)} className={inputCls}><option value="">—</option>{COLLEGES.map(c => <option key={c}>{c}</option>)}</select></Field>
-            <Field label="Email"><input value={p.email ?? ''} onChange={e => set('email', e.target.value || null)} className={inputCls} /></Field>
-            <Field label="Phone"><input value={p.phone ?? ''} onChange={e => set('phone', e.target.value || null)} className={inputCls} /></Field>
-          </div></Card>
-          <div><p className="mb-2 text-sm font-medium">Profile (biography, education, research, publications…)</p><RichEditor value={p.bio} onChange={v => set('bio', v)} /></div>
+          <LangTabs lang={lang} setLang={setLang} />
+          {lang === 'en' ? (
+            <>
+              <Card><div className="grid gap-4 sm:grid-cols-2">
+                <Field label="Full name"><input value={p.name} onChange={e => set('name', e.target.value)} className={inputCls} /></Field>
+                <Field label="Job title"><input value={p.title ?? ''} onChange={e => set('title', e.target.value || null)} className={inputCls} /></Field>
+                <Field label="Department"><input value={p.department ?? ''} onChange={e => set('department', e.target.value || null)} className={inputCls} /></Field>
+                <Field label="College"><select value={p.college ?? ''} onChange={e => set('college', e.target.value || null)} className={inputCls}><option value="">—</option>{COLLEGES.map(c => <option key={c}>{c}</option>)}</select></Field>
+                <Field label="Email"><input value={p.email ?? ''} onChange={e => set('email', e.target.value || null)} className={inputCls} /></Field>
+                <Field label="Phone"><input value={p.phone ?? ''} onChange={e => set('phone', e.target.value || null)} className={inputCls} /></Field>
+              </div></Card>
+              <div><p className="mb-2 text-sm font-medium">Profile (biography, education, research, publications…)</p><RichEditor key={'en' + edKey} value={p.bio} onChange={v => set('bio', v)} /></div>
+            </>
+          ) : (
+            <>
+              <Card><div className="grid gap-4 sm:grid-cols-2" dir="rtl">
+                <Field label="الاسم"><input value={p.name_ar ?? ''} onChange={e => set('name_ar', e.target.value || null)} className={inputCls} /></Field>
+                <Field label="المسمى الوظيفي"><input value={p.title_ar ?? ''} onChange={e => set('title_ar', e.target.value || null)} className={inputCls} /></Field>
+                <Field label="القسم"><input value={p.department_ar ?? ''} onChange={e => set('department_ar', e.target.value || null)} className={inputCls} /></Field>
+              </div></Card>
+              <div><p className="mb-2 text-sm font-medium">الملف التعريفي</p><RichEditor key={'ar' + edKey} dir="rtl" value={p.bio_ar ?? ''} onChange={v => set('bio_ar', v)} /></div>
+            </>
+          )}
         </div>
         <div className="space-y-6">
           <Card title="Photo"><ImageField label="" value={p.photo} onChange={v => set('photo', v)} /></Card>

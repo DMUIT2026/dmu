@@ -78,7 +78,7 @@ function Btn({ on, active, title, children, disabled }: { on: () => void; active
   );
 }
 
-export default function RichEditor({ value, onChange }: { value: string; onChange: (html: string) => void }) {
+export default function RichEditor({ value, onChange, dir = 'ltr' }: { value: string; onChange: (html: string) => void; dir?: 'ltr' | 'rtl' }) {
   const [source, setSource] = useState(false);
   const [src, setSrc] = useState(value);
   const [picker, setPicker] = useState<null | 'image' | 'file'>(null);
@@ -93,7 +93,7 @@ export default function RichEditor({ value, onChange }: { value: string; onChang
       RawBlock,
     ],
     content: value,
-    editorProps: { attributes: { class: 'prose-dmu min-h-[420px] px-6 py-5 outline-none' } },
+    editorProps: { attributes: { class: 'prose-dmu min-h-[420px] px-6 py-5 outline-none', dir } },
     onUpdate: ({ editor }) => onChange(editorToHtml(editor.getHTML())),
   });
   const st = useEditorState({
@@ -129,7 +129,7 @@ export default function RichEditor({ value, onChange }: { value: string; onChang
   const faq = () => c().insertContent({ type: 'rawBlock', attrs: { html: '<details><summary>Question</summary><p>Answer</p></details>' } }).run();
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-white">
+    <div className="overflow-hidden rounded-2xl border border-line bg-white" dir={dir}>
       <div className="sticky top-0 z-10 flex flex-wrap items-center gap-0.5 border-b border-line bg-white/95 p-2 backdrop-blur">
         {!source && <>
           <Btn title="Large heading" active={st.h2} on={() => c().toggleHeading({ level: 2 }).run()}><Heading2 className="size-4" /></Btn>
@@ -175,7 +175,7 @@ export default function RichEditor({ value, onChange }: { value: string; onChang
         </button>
       </div>
       {source
-        ? <textarea value={src} onChange={e => { setSrc(e.target.value); onChange(e.target.value); }} className="min-h-[520px] w-full p-5 font-mono text-xs leading-relaxed outline-none" spellCheck={false} />
+        ? <textarea dir={dir} value={src} onChange={e => { setSrc(e.target.value); onChange(e.target.value); }} className="min-h-[520px] w-full p-5 font-mono text-xs leading-relaxed outline-none" spellCheck={false} />
         : <EditorContent editor={editor} />}
       {picker && (
         <MediaPicker accept={picker === 'image' ? 'image' : 'any'} onClose={() => setPicker(null)} onPick={(url, name) => {

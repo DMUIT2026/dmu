@@ -4,9 +4,10 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import type { MenuGroup } from '@/lib/types';
+import { label as lbl, lhref, type Locale } from '@/lib/i18n';
 
 /** Secondary bar for a college's own pages (Discover, Programs, Admissions, Research...). */
-export default function CollegeNav({ title, url, groups }: { title: string; url?: string | null; groups: MenuGroup[] }) {
+export default function CollegeNav({ title, url, groups, locale }: { title: string; url?: string | null; groups: MenuGroup[]; locale: Locale }) {
   const [open, setOpen] = useState<number | null>(null);
   const pathname = usePathname();
   const ref = useRef<HTMLDivElement>(null);
@@ -19,14 +20,14 @@ export default function CollegeNav({ title, url, groups }: { title: string; url?
   return (
     <div ref={ref} className="sticky top-[72px] lg:top-[108px] z-40 border-b border-line bg-white/95 backdrop-blur-md">
       <div className="container-x flex items-center gap-2 overflow-x-auto no-scrollbar">
-        <Link href={url ?? '#'} className="font-display shrink-0 py-3.5 pr-4 text-[1.05rem] text-bronze-700 border-r border-line mr-2 hover:text-ink">
+        <Link href={lhref(locale, url ?? '#')} className="font-display shrink-0 py-3.5 pe-4 text-[1.05rem] text-bronze-700 border-e border-line me-2 hover:text-ink">
           {title.replace(/\s*\(.*\)\s*/, '')}
         </Link>
         {groups.map((g, i) => (
           <div key={g.title} className="relative shrink-0">
             <button type="button" onClick={e => { e.stopPropagation(); setOpen(open === i ? null : i); }} aria-expanded={open === i}
               className={`flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium transition ${open === i ? 'bg-sand-100 text-ink' : 'text-ink/75 hover:text-ink hover:bg-sand-100'}`}>
-              {g.title}<ChevronDown className={`size-3.5 transition-transform ${open === i ? 'rotate-180' : ''}`} />
+              {lbl(g, locale)}<ChevronDown className={`size-3.5 transition-transform ${open === i ? 'rotate-180' : ''}`} />
             </button>
           </div>
         ))}
@@ -38,11 +39,11 @@ export default function CollegeNav({ title, url, groups }: { title: string; url?
               <div key={l.label}>
                 {l.url ? (
                   /^https?:/.test(l.url)
-                    ? <a href={l.url} target="_blank" rel="noopener" className="block rounded-lg px-3 py-2 text-[.95rem] hover:bg-sand-100">{l.label}</a>
-                    : <Link href={l.url} className={`block rounded-lg px-3 py-2 text-[.95rem] hover:bg-sand-100 ${pathname === l.url ? 'text-bronze-700 font-semibold' : ''}`}>{l.label}</Link>
-                ) : <p className="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-widest text-bronze-600">{l.label}</p>}
+                    ? <a href={l.url} target="_blank" rel="noopener" className="block rounded-lg px-3 py-2 text-[.95rem] hover:bg-sand-100">{lbl(l, locale)}</a>
+                    : <Link href={lhref(locale, l.url)} className={`block rounded-lg px-3 py-2 text-[.95rem] hover:bg-sand-100 ${pathname === lhref(locale, l.url) ? 'text-bronze-700 font-semibold' : ''}`}>{lbl(l, locale)}</Link>
+                ) : <p className="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-widest text-bronze-600">{lbl(l, locale)}</p>}
                 {l.children?.map(c => c.url && (
-                  <Link key={c.label} href={c.url} className="block rounded-lg px-6 py-1.5 text-sm text-ink/70 hover:bg-sand-100">{c.label}</Link>
+                  <Link key={c.label} href={lhref(locale, c.url)} className="block rounded-lg px-6 py-1.5 text-sm text-ink/70 hover:bg-sand-100">{lbl(c, locale)}</Link>
                 ))}
               </div>
             ))}

@@ -7,14 +7,14 @@ export default function Pagination({ page, pages, href }: { page: number; pages:
   const btn = 'grid size-11 place-items-center rounded-full border text-sm font-medium transition';
   return (
     <nav aria-label="Pagination" className="mt-14 flex items-center justify-center gap-2">
-      {page > 1 && <Link href={href(page - 1)} className={`${btn} border-line bg-white hover:border-gold-500`} aria-label="Previous page"><ChevronLeft className="size-4" /></Link>}
+      {page > 1 && <Link href={href(page - 1)} className={`${btn} border-line bg-white hover:border-gold-500`} aria-label="Previous page"><ChevronLeft className="size-4 flip-rtl" /></Link>}
       {nums.map((n, i) => (
         <span key={n} className="flex items-center gap-2">
           {i > 0 && n - nums[i - 1] > 1 && <span className="px-1 text-stone-500">…</span>}
           <Link href={href(n)} aria-current={n === page ? 'page' : undefined} className={`${btn} ${n === page ? 'border-espresso bg-espresso text-white' : 'border-line bg-white hover:border-gold-500'}`}>{n}</Link>
         </span>
       ))}
-      {page < pages && <Link href={href(page + 1)} className={`${btn} border-line bg-white hover:border-gold-500`} aria-label="Next page"><ChevronRight className="size-4" /></Link>}
+      {page < pages && <Link href={href(page + 1)} className={`${btn} border-line bg-white hover:border-gold-500`} aria-label="Next page"><ChevronRight className="size-4 flip-rtl" /></Link>}
     </nav>
   );
 }

@@ -14,7 +14,8 @@ function LinkList({ items, onChange, depth = 0 }: { items: MenuLink[]; onChange:
         <div key={i}>
           <div className="flex flex-wrap items-center gap-2 rounded-xl border border-line bg-white p-2">
             {depth > 0 && <CornerDownRight className="size-4 text-stone-500" />}
-            <input value={it.label} onChange={e => upd(i, { label: e.target.value })} placeholder="Label" className={`${inputCls} !py-1.5 max-w-64`} />
+            <input value={it.label} onChange={e => upd(i, { label: e.target.value })} placeholder="Label" className={`${inputCls} !py-1.5 max-w-56`} />
+            <input dir="rtl" value={it.label_ar ?? ''} onChange={e => upd(i, { label_ar: e.target.value })} placeholder="الاسم بالعربية" className={`${inputCls} !py-1.5 max-w-56`} />
             <input value={it.url ?? ''} onChange={e => upd(i, { url: e.target.value || null })} placeholder="Link (e.g. /admissions) — empty for a heading" className={`${inputCls} !py-1.5 flex-1 min-w-48`} />
             <button onClick={() => move(i, -1)} className="p-1.5 text-stone-500 hover:text-ink" aria-label="Up"><ArrowUp className="size-4" /></button>
             <button onClick={() => move(i, 1)} className="p-1.5 text-stone-500 hover:text-ink" aria-label="Down"><ArrowDown className="size-4" /></button>
@@ -41,6 +42,7 @@ export default function MenuEditor({ initial }: { initial: Menu }) {
       {m.kind !== 'menu' && (
         <Card className="mb-6"><div className="grid gap-4 sm:grid-cols-2">
           <Field label="Menu name"><input value={m.title ?? ''} onChange={e => setM({ ...m, title: e.target.value })} className={inputCls} /></Field>
+          <Field label="Menu name (Arabic)"><input dir="rtl" value={m.title_ar ?? ''} onChange={e => setM({ ...m, title_ar: e.target.value })} className={inputCls} /></Field>
           {m.kind === 'college' && <Field label="Name links to"><input value={m.url ?? ''} onChange={e => setM({ ...m, url: e.target.value })} className={inputCls} /></Field>}
         </div></Card>
       )}
@@ -52,6 +54,7 @@ export default function MenuEditor({ initial }: { initial: Menu }) {
               <Card key={gi}>
                 <div className="mb-3 flex items-center gap-2">
                   <input value={g.title} onChange={e => setM({ ...m, items: groups.map((x, j) => j === gi ? { ...x, title: e.target.value } : x) })} placeholder="Group heading" className={`${inputCls} font-medium`} />
+                  <input dir="rtl" value={g.title_ar ?? ''} onChange={e => setM({ ...m, items: groups.map((x, j) => j === gi ? { ...x, title_ar: e.target.value } : x) })} placeholder="العنوان بالعربية" className={`${inputCls} font-medium`} />
                   <button onClick={() => setM({ ...m, items: groups.filter((_, j) => j !== gi) })} className="p-2 text-stone-500 hover:text-red-700" aria-label="Remove group"><X className="size-4" /></button>
                 </div>
                 <LinkList items={g.links} onChange={v => setM({ ...m, items: groups.map((x, j) => j === gi ? { ...x, links: v } : x) })} />

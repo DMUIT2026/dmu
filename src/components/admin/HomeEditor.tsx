@@ -2,24 +2,39 @@
 import { useState, useTransition } from 'react';
 import { Plus, X } from 'lucide-react';
 import { ImageField } from './MediaPicker';
-import { Card, Field, inputCls, PageTitle, Toast } from './ui';
+import { Card, Field, inputCls, LangTabs, PageTitle, Toast } from './ui';
 import { saveSetting } from '@/app/admin/actions';
 import type { Settings } from '@/lib/types';
 
-export default function HomeEditor({ initial }: { initial: Settings }) {
-  const [s, setS] = useState<Settings>(initial);
+export default function HomeEditor({ initial, initialAr }: { initial: Settings; initialAr: Settings }) {
+  const [en, setEn] = useState<Settings>(initial);
+  const [arS, setAr] = useState<Settings>(initialAr);
+  const [lang, setLang] = useState<'en' | 'ar'>('en');
+  const s = lang === 'en' ? en : arS;
+  const setS = lang === 'en' ? setEn : setAr;
   const [toast, setToast] = useState<string | null>(null);
   const [pending, start] = useTransition();
   const save = () => start(async () => {
     const keys: (keyof Settings)[] = ['home_hero', 'home_intro', 'home_stats', 'home_colleges', 'home_alumni', 'contact', 'social', 'portal_links'];
-    for (const k of keys) { const r = await saveSetting(k, s[k]); if (!r.ok) { setToast(r.error ?? 'Error'); return; } }
+    for (const k of keys) {
+      const r1 = await saveSetting(k, en[k]); if (!r1.ok) { setToast(r1.error ?? 'Error'); return; }
+      // Arabic copy: text in Arabic; pictures, links and numbers follow the English version
+      const merged = k === 'home_hero' ? { ...arS.home_hero, slides: en.home_hero.slides }
+        : k === 'home_intro' ? { ...arS.home_intro, image: en.home_intro?.image, link: en.home_intro?.link }
+        : k === 'home_alumni' ? { ...arS.home_alumni, logos: en.home_alumni.logos }
+        : k === 'contact' ? { ...en.contact, address: arS.contact?.address ?? en.contact.address }
+        : k === 'social' ? en.social : arS[k];
+      const r2 = await saveSetting(k + '_ar', merged); if (!r2.ok) { setToast(r2.error ?? 'Error'); return; }
+    }
     setToast('Saved — the website is updated.'); setTimeout(() => setToast(null), 3000);
   });
   const hero = s.home_hero, intro = s.home_intro ?? { title: '', text: '' }, stats = s.home_stats, alumni = s.home_alumni;
   return (
     <>
       <PageTitle title="Home page & contact" subtitle="The main banner, introduction, key numbers, partner logos and contact details." actions={<button disabled={pending} onClick={save} className="btn btn-dark !py-2.5">{pending ? 'Saving…' : 'Save changes'}</button>} />
-      <div className="grid gap-6">
+      <LangTabs lang={lang} setLang={setLang} />
+      {lang === 'ar' && <p className="mb-4 rounded-xl bg-sand-100 p-3 text-sm">You are editing the Arabic texts. Photos, logos and links are shared with the English version.</p>}
+      <div className="grid gap-6" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
         <Card title="Main banner">
           <div className="grid gap-4">
             <Field label="Small line above the headline"><input value={hero.eyebrow ?? ''} onChange={e => setS({ ...s, home_hero: { ...hero, eyebrow: e.target.value } })} className={inputCls} /></Field>

@@ -1,27 +1,28 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
+import { lhref, t, type Locale } from '@/lib/i18n';
 
 export interface Crumb { label: string; href?: string }
 
 /** Page banner: title on a calm dark panel, photo shown beside it as a framed picture (never under the text). */
-export default function PageHero({ title, image, crumbs = [], eyebrow, subtitle, compact = false, children }: {
-  title: string; image?: string | null; crumbs?: Crumb[]; eyebrow?: string; subtitle?: string | null; compact?: boolean; children?: React.ReactNode;
+export default function PageHero({ locale = 'en', title, image, crumbs = [], eyebrow, subtitle, compact = false, children }: {
+  locale?: Locale; title: string; image?: string | null; crumbs?: Crumb[]; eyebrow?: string; subtitle?: string | null; compact?: boolean; children?: React.ReactNode;
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-espresso text-white">
-      <div aria-hidden className="absolute -left-40 -top-20 -z-10 size-[560px] rounded-full bg-gold-500/15 blur-[120px]" />
-      <div aria-hidden className="absolute -bottom-40 right-0 -z-10 size-[480px] rounded-full bg-bronze-600/20 blur-[120px]" />
+      <div aria-hidden className="absolute -start-40 -top-20 -z-10 size-[560px] rounded-full bg-gold-500/15 blur-[120px]" />
+      <div aria-hidden className="absolute -bottom-40 end-0 -z-10 size-[480px] rounded-full bg-bronze-600/20 blur-[120px]" />
       <div aria-hidden className="absolute inset-0 -z-10 opacity-[.06] [background-image:radial-gradient(circle_at_1px_1px,#fff_1px,transparent_0)] [background-size:28px_28px]" />
       <div className={`container-x grid items-center gap-10 ${compact ? 'pt-36 pb-12 md:pt-40' : 'pt-36 pb-14 md:pt-44 md:pb-16'} ${image ? 'lg:grid-cols-[1.1fr_1fr] lg:gap-14' : ''}`}>
         <div>
           {crumbs.length > 0 && (
             <nav aria-label="Breadcrumb" className="rise mb-6 flex flex-wrap items-center gap-1.5 text-sm text-white/60">
-              <Link href="/" className="hover:text-white">Home</Link>
+              <Link href={lhref(locale, '/')} className="hover:text-white">{t(locale, 'home')}</Link>
               {crumbs.map((c, i) => (
                 <span key={i} className="flex items-center gap-1.5">
-                  <ChevronRight className="size-3.5 opacity-60" />
-                  {c.href ? <Link href={c.href} className="hover:text-white">{c.label}</Link> : <span className="text-white/85">{c.label}</span>}
+                  <ChevronRight className="size-3.5 opacity-60 flip-rtl" />
+                  {c.href ? <Link href={lhref(locale, c.href)} className="hover:text-white">{c.label}</Link> : <span className="text-white/85">{c.label}</span>}
                 </span>
               ))}
             </nav>

@@ -3,19 +3,21 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { ExternalLink, FileText, Home, Image as ImageIcon, LayoutDashboard, ListTree, LogOut, Mail, Menu, Newspaper, GraduationCap, UserCog, Users, X } from 'lucide-react';
+import { CalendarDays, ExternalLink, FileText, Home, Image as ImageIcon, Languages, LayoutDashboard, ListTree, LogOut, Mail, Menu, Newspaper, GraduationCap, UserCog, Users, X } from 'lucide-react';
 import { signOut } from '@/app/admin/actions';
 
 const items = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/pages', label: 'Pages', icon: FileText },
-  { href: '/admin/news', label: 'News & Events', icon: Newspaper },
+  { href: '/admin/news', label: 'News', icon: Newspaper },
+  { href: '/admin/events', label: 'Events calendar', icon: CalendarDays },
   { href: '/admin/people', label: 'Faculty & Staff', icon: Users },
   { href: '/admin/programs', label: 'Programmes', icon: GraduationCap },
   { href: '/admin/home', label: 'Home page & contact', icon: Home },
   { href: '/admin/menus', label: 'Menus', icon: ListTree },
   { href: '/admin/media', label: 'Images & files', icon: ImageIcon },
   { href: '/admin/messages', label: 'Messages', icon: Mail },
+  { href: '/admin/translation', label: 'Arabic translation', icon: Languages },
   { href: '/admin/users', label: 'Admin users', icon: UserCog },
 ];
 

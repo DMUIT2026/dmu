@@ -17,13 +17,14 @@ config({ path: '.env.local' });
 const URL_ = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const KEY = process.env.SUPABASE_SECRET_KEY!;
 const DB = process.env.DATABASE_URL!;
-if (!KEY || !DB || DB.includes('YOUR-PASSWORD')) { console.error('Please fill SUPABASE_SECRET_KEY and DATABASE_URL in .env.local first.'); process.exit(1); }
+if (!KEY) { console.error('Please fill SUPABASE_SECRET_KEY in .env.local first.'); process.exit(1); }
 const sb = createClient(URL_, KEY, { auth: { persistSession: false } });
 const MEDIA = path.join(process.cwd(), 'migration', 'media');
 const ownerArg = process.argv.indexOf('--owner');
 const ownerEmail = ownerArg > -1 ? process.argv[ownerArg + 1] : null;
 
 async function schema() {
+  if (!DB || DB.includes('YOUR-PASSWORD')) { console.log('schema: skipped (tables were created in the Supabase SQL editor)'); return; }
   const pg = new Client({ connectionString: DB, ssl: { rejectUnauthorized: false } });
   await pg.connect();
   for (const f of fs.readdirSync('supabase/migrations').sort()) {

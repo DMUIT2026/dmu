@@ -11,6 +11,7 @@ import Directory from '@/components/site/Directory';
 import ContactForm from '@/components/site/ContactForm';
 import ScopusPublications from '@/components/site/ScopusPublications';
 import ScopusAuthorPanel from '@/components/site/ScopusAuthorPanel';
+import ResearchProfile from '@/components/site/ResearchProfile';
 import { Suspense } from 'react';
 import FilterableCards from '@/components/site/FilterableCards';
 import { prepareHtml } from '@/components/site/RichText';
@@ -110,7 +111,9 @@ export default async function CmsPage({ params, searchParams }: Props) {
     );
   }
 
-  if (page.meta?.scopus_author_id) body = <>{body}<Suspense fallback={null}><ScopusAuthorPanel authorId={page.meta.scopus_author_id} locale={locale} /></Suspense></>;
+  if (path.startsWith('research/') && !page.meta?.widget && page.template !== 'news' && (page.meta?.scopus_author_id || /^\s*<div class="cards"><div class="card">[\s\S]*?<\/div><\/div>\s*<h3>/.test(content))) {
+    body = <ResearchProfile html={content} authorId={page.meta?.scopus_author_id} locale={locale} />;
+  } else if (page.meta?.scopus_author_id) body = <>{body}<Suspense fallback={null}><ScopusAuthorPanel authorId={page.meta.scopus_author_id} locale={locale} /></Suspense></>;
 
   const wide = page.meta?.widget === 'scopus' || page.meta?.widget === 'card-filter' || page.template === 'news' || page.template === 'directory' || page.template === 'contact' || /class="cards"/.test(content);
   return (

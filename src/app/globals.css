@@ -188,3 +188,6 @@ html.a11y-still *, html.a11y-still *::before, html.a11y-still *::after { animati
   .prose-dmu figure.news-img--left:not(.news-img--full) { float: inline-start; margin-block: .35rem 1rem; margin-inline: 0 1.75rem; }
   .prose-dmu figure.news-img--right:not(.news-img--full) { float: inline-end; margin-block: .35rem 1rem; margin-inline: 1.75rem 0; }
 }
+
+/* cards whose picture is a white icon (e.g. on the Research home page) */
+.prose-dmu .card img[src*="_white"], .prose-dmu .card img[src*="white."] { background: var(--color-espresso); object-fit: contain; padding: 2.25rem; aspect-ratio: 16 / 9; }

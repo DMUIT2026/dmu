@@ -17,6 +17,13 @@ const allowed: sanitizeHtml.IOptions = {
 export function prepareHtml(html: string, locale: 'en' | 'ar' = 'en') {
   let out = sanitizeHtml(html ?? '', allowed);
   if (locale === 'ar') out = out.replace(/href="\/(?!ar\/|ar"|admin)/g, 'href="/ar/');
+  // documents (PDF, Word…) and other websites open in a new tab
+  out = out.replace(/<a ([^>]*?)href="([^"]+)"([^>]*)>/g, (m, pre, href, post) => {
+    const external = /^https?:\/\//.test(href) && !/^https?:\/\/(www\.)?dmu\.ae\/?(?!home\/wp-content)/.test(href);
+    const doc = /\.(pdf|docx?|xlsx?|pptx?|zip)(\?|#|$)/i.test(href) || /\/storage\/v1\/object\/public\//.test(href);
+    if (!(external || doc) || /target=/.test(pre + post)) return m;
+    return `<a ${pre}href="${href}"${post} target="_blank" rel="noopener">`;
+  });
   return out
     .replace(/<table/g, '<div class="table-wrap"><table').replace(/<\/table>/g, '</table></div>')
     .replace(/<img /g, '<img loading="lazy" ');

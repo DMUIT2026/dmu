@@ -117,7 +117,8 @@ const fill = (cur: unknown, val: unknown) => overwrite || cur === null || cur ==
   const have = new Set(settings.map(s => s.key));
   for (const s of settings) {
     if (s.key.endsWith('_ar') || (have.has(s.key + '_ar') && !overwrite)) continue;
-    const { error } = await sb.from('settings').upsert({ key: s.key + '_ar', value: deep(s.value) });
+    // social links stay exactly as in English: their labels pick the icons
+    const { error } = await sb.from('settings').upsert({ key: s.key + '_ar', value: s.key === 'social' ? s.value : deep(s.value) });
     if (error) console.warn('settings', s.key, error.message);
   }
   console.log('settings: Arabic copies written');

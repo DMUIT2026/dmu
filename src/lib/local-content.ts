@@ -1,17 +1,23 @@
 // Preview mode: serve the copied content straight from migration/data (used before Supabase is filled).
 import 'server-only';
 import { buildRows, type Rows } from './migration-rows';
+import { addArabic, trHtml } from './local-ar';
 import type { Settings } from './types';
 
 let rows: Rows | null = null;
-const r = () => (rows ??= buildRows());
+const r = () => (rows ??= addArabic(buildRows()));
+/** Arabic HTML is slow to build for every row, so it is made the first time a row is opened. */
+const withArContent = <T extends { content: string; content_ar?: string | null } | null | undefined>(row: T): T => {
+  if (row && row.content_ar == null) row.content_ar = trHtml(row.content);
+  return row;
+};
 
 export const settings = () => r().settings as unknown as Settings;
 export const menu = (key: string) => r().menus.find(m => m.key === key) ?? null;
 export const pages = () => r().pages;
-export const page = (path: string) => r().pages.find(p => p.path === path && p.status === 'published') ?? null;
+export const page = (path: string) => withArContent(r().pages.find(p => p.path === path && p.status === 'published') ?? null);
 export const categories = () => r().categories;
-export const post = (slug: string) => r().posts.find(p => p.slug === slug) ?? null;
+export const post = (slug: string) => withArContent(r().posts.find(p => p.slug === slug) ?? null);
 export const programs = () => r().programs;
 export const people = () => r().people;
 

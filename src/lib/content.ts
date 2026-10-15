@@ -16,11 +16,14 @@ const allSettings = cache(async (): Promise<Record<string, unknown>> => {
   for (const r of data ?? []) out[r.key] = r.value;
   return out;
 });
+/** Settings that are the same in every language (social links: their labels pick the icons). */
+const SAME_IN_ALL_LANGUAGES = new Set(['social']);
+
 /** Site settings; for Arabic, any "<key>_ar" setting replaces the English one. */
 export async function getSettings(l: Locale = 'en'): Promise<Settings> {
   const all = await allSettings();
   const out: Record<string, unknown> = {};
-  for (const [k, v] of Object.entries(all)) if (!k.endsWith('_ar')) out[k] = l === 'ar' && all[k + '_ar'] ? all[k + '_ar'] : v;
+  for (const [k, v] of Object.entries(all)) if (!k.endsWith('_ar')) out[k] = l === 'ar' && all[k + '_ar'] && !SAME_IN_ALL_LANGUAGES.has(k) ? all[k + '_ar'] : v;
   return out as unknown as Settings;
 }
 
